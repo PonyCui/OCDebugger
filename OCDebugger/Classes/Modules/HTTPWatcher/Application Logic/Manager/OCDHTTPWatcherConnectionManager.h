@@ -1,5 +1,5 @@
 //
-//  OCDebugger.h
+//  OCDHTTPWatcherConnectionManager.h
 //  OCDebugger
 //
 //  Created by 崔 明辉 on 15/6/8.
@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface OCDebugger : NSObject
+@interface OCDHTTPWatcherConnectionManager : NSObject
 
-+ (void)setEnabled:(BOOL)enabled;
+- (void)registerHookers;
+
+- (void)unregisterHookers;
 
 @end

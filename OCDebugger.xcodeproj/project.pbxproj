@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2653B23687E3F7682B72DD97 /* libPods-OCDebugger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60744B931AF41A208105E45D /* libPods-OCDebugger.a */; };
+		63152A2A1B2599B60072F9F4 /* OCDCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A291B2599B60072F9F4 /* OCDCore.m */; };
+		63152A2D1B2599BC0072F9F4 /* OCDDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A2C1B2599BC0072F9F4 /* OCDDefine.m */; };
+		63152A331B259C2F0072F9F4 /* OCDHTTPWatcherCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A321B259C2F0072F9F4 /* OCDHTTPWatcherCore.m */; };
+		63152A361B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A351B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m */; };
+		63152A3B1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A3A1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m */; };
+		63152A4D1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A4C1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m */; };
+		63152A4E1B25AA060072F9F4 /* OCDDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A2C1B2599BC0072F9F4 /* OCDDefine.m */; };
+		63152A4F1B25AA060072F9F4 /* OCDHTTPWatcherDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A351B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m */; };
+		63152A501B25AA060072F9F4 /* OCDCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A291B2599B60072F9F4 /* OCDCore.m */; };
+		63152A521B25AA060072F9F4 /* OCDHTTPWatcherConnectionEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A3A1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m */; };
+		63152A531B25AA060072F9F4 /* OCDHTTPWatcherConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A4C1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m */; };
+		63152A541B25AA060072F9F4 /* OCDHTTPWatcherCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A321B259C2F0072F9F4 /* OCDHTTPWatcherCore.m */; };
+		63152A551B25AA060072F9F4 /* OCDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C203841B25833400D027CC /* OCDebugger.m */; };
+		63152A591B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A581B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m */; };
+		63152A5A1B25AD9C0072F9F4 /* OCDHTTPWatcherURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A581B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m */; };
 		63C203831B25833400D027CC /* OCDebugger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C203821B25833400D027CC /* OCDebugger.h */; };
 		63C203851B25833400D027CC /* OCDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C203841B25833400D027CC /* OCDebugger.m */; };
 		63C2038B1B25833400D027CC /* libOCDebugger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C2037F1B25833400D027CC /* libOCDebugger.a */; };
@@ -17,6 +33,7 @@
 		63C203B01B258B3500D027CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C203AF1B258B3500D027CC /* Images.xcassets */; };
 		63C203B31B258B3500D027CC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C203B11B258B3500D027CC /* LaunchScreen.xib */; };
 		63C203BF1B258B3500D027CC /* OCDebuggerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C203BE1B258B3500D027CC /* OCDebuggerDemoTests.m */; };
+		6DF2A29D20125BEA0882BA30 /* libPods-OCDebuggerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6679A4FFFF3441CA213F47B0 /* libPods-OCDebuggerDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +67,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		60744B931AF41A208105E45D /* libPods-OCDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCDebugger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63152A281B2599B60072F9F4 /* OCDCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDCore.h; sourceTree = "<group>"; };
+		63152A291B2599B60072F9F4 /* OCDCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDCore.m; sourceTree = "<group>"; };
+		63152A2B1B2599BC0072F9F4 /* OCDDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDefine.h; sourceTree = "<group>"; };
+		63152A2C1B2599BC0072F9F4 /* OCDDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDefine.m; sourceTree = "<group>"; };
+		63152A311B259C2F0072F9F4 /* OCDHTTPWatcherCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherCore.h; sourceTree = "<group>"; };
+		63152A321B259C2F0072F9F4 /* OCDHTTPWatcherCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherCore.m; sourceTree = "<group>"; };
+		63152A341B259EAD0072F9F4 /* OCDHTTPWatcherDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherDefine.h; sourceTree = "<group>"; };
+		63152A351B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherDefine.m; sourceTree = "<group>"; };
+		63152A391B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherConnectionEntity.h; sourceTree = "<group>"; };
+		63152A3A1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherConnectionEntity.m; sourceTree = "<group>"; };
+		63152A4B1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherConnectionManager.h; sourceTree = "<group>"; };
+		63152A4C1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherConnectionManager.m; sourceTree = "<group>"; };
+		63152A571B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherURLProtocol.h; sourceTree = "<group>"; };
+		63152A581B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherURLProtocol.m; sourceTree = "<group>"; };
 		63C2037F1B25833400D027CC /* libOCDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C203821B25833400D027CC /* OCDebugger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCDebugger.h; sourceTree = "<group>"; };
 		63C203841B25833400D027CC /* OCDebugger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDebugger.m; sourceTree = "<group>"; };
@@ -68,6 +100,11 @@
 		63C203B81B258B3500D027CC /* OCDebuggerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCDebuggerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C203BD1B258B3500D027CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C203BE1B258B3500D027CC /* OCDebuggerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDebuggerDemoTests.m; sourceTree = "<group>"; };
+		6679A4FFFF3441CA213F47B0 /* libPods-OCDebuggerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCDebuggerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		686E9B9A245E5E7ECB3552F1 /* Pods-OCDebugger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCDebugger.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCDebugger/Pods-OCDebugger.release.xcconfig"; sourceTree = "<group>"; };
+		8AD46E2A98BDA90DA4A9B2A1 /* Pods-OCDebugger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCDebugger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCDebugger/Pods-OCDebugger.debug.xcconfig"; sourceTree = "<group>"; };
+		B9595A44FC80F3405545251A /* Pods-OCDebuggerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCDebuggerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCDebuggerDemo/Pods-OCDebuggerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D6C9572B2570D676293937BA /* Pods-OCDebuggerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCDebuggerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCDebuggerDemo/Pods-OCDebuggerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2653B23687E3F7682B72DD97 /* libPods-OCDebugger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF2A29D20125BEA0882BA30 /* libPods-OCDebuggerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +142,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E80469047DB76599677BC72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AD46E2A98BDA90DA4A9B2A1 /* Pods-OCDebugger.debug.xcconfig */,
+				686E9B9A245E5E7ECB3552F1 /* Pods-OCDebugger.release.xcconfig */,
+				B9595A44FC80F3405545251A /* Pods-OCDebuggerDemo.debug.xcconfig */,
+				D6C9572B2570D676293937BA /* Pods-OCDebuggerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		63152A231B2598F40072F9F4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				63152A241B2598F40072F9F4 /* Common */,
+				63152A251B2598F40072F9F4 /* Modules */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		63152A241B2598F40072F9F4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				63152A261B2599AE0072F9F4 /* Define */,
+				63152A271B2599AE0072F9F4 /* Core */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		63152A251B2598F40072F9F4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				63152A2E1B259BED0072F9F4 /* HTTPWatcher */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		63152A261B2599AE0072F9F4 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				63152A2B1B2599BC0072F9F4 /* OCDDefine.h */,
+				63152A2C1B2599BC0072F9F4 /* OCDDefine.m */,
+				63152A341B259EAD0072F9F4 /* OCDHTTPWatcherDefine.h */,
+				63152A351B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		63152A271B2599AE0072F9F4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				63152A281B2599B60072F9F4 /* OCDCore.h */,
+				63152A291B2599B60072F9F4 /* OCDCore.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		63152A2E1B259BED0072F9F4 /* HTTPWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				63152A2F1B259BED0072F9F4 /* Application Logic */,
+				63152A301B259BED0072F9F4 /* Module Interface */,
+			);
+			path = HTTPWatcher;
+			sourceTree = "<group>";
+		};
+		63152A2F1B259BED0072F9F4 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				63152A561B25ABEE0072F9F4 /* Protocol */,
+				63152A381B259F780072F9F4 /* Entity */,
+				63152A371B259F780072F9F4 /* Manager */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		63152A301B259BED0072F9F4 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				63152A311B259C2F0072F9F4 /* OCDHTTPWatcherCore.h */,
+				63152A321B259C2F0072F9F4 /* OCDHTTPWatcherCore.m */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		63152A371B259F780072F9F4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				63152A4B1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.h */,
+				63152A4C1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		63152A381B259F780072F9F4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				63152A391B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.h */,
+				63152A3A1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		63152A561B25ABEE0072F9F4 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				63152A571B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.h */,
+				63152A581B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		63C203761B25833400D027CC = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +262,8 @@
 				63C203A11B258B3500D027CC /* OCDebuggerDemo */,
 				63C203BB1B258B3500D027CC /* OCDebuggerDemoTests */,
 				63C203801B25833400D027CC /* Products */,
+				0E80469047DB76599677BC72 /* Pods */,
+				85BC9F348EA71326063072DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +281,7 @@
 		63C203811B25833400D027CC /* OCDebugger */ = {
 			isa = PBXGroup;
 			children = (
+				63152A231B2598F40072F9F4 /* Classes */,
 				63C203821B25833400D027CC /* OCDebugger.h */,
 				63C203841B25833400D027CC /* OCDebugger.m */,
 			);
@@ -191,6 +345,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		85BC9F348EA71326063072DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60744B931AF41A208105E45D /* libPods-OCDebugger.a */,
+				6679A4FFFF3441CA213F47B0 /* libPods-OCDebuggerDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,9 +361,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C203931B25833400D027CC /* Build configuration list for PBXNativeTarget "OCDebugger" */;
 			buildPhases = (
+				4A7846D9C18EDA66C121EF17 /* Check Pods Manifest.lock */,
 				63C2037B1B25833400D027CC /* Sources */,
 				63C2037C1B25833400D027CC /* Frameworks */,
 				63C2037D1B25833400D027CC /* CopyFiles */,
+				B5CE77026E2C55284836EBF7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,9 +398,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C203C41B258B3500D027CC /* Build configuration list for PBXNativeTarget "OCDebuggerDemo" */;
 			buildPhases = (
+				33FA044494643FF5D7EA181C /* Check Pods Manifest.lock */,
 				63C2039C1B258B3500D027CC /* Sources */,
 				63C2039D1B258B3500D027CC /* Frameworks */,
 				63C2039E1B258B3500D027CC /* Resources */,
+				6716C7B025A9A752B8545B7B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,6 +437,7 @@
 		63C203771B25833400D027CC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = OCD;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = PonyCui;
 				TargetAttributes = {
@@ -336,12 +504,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33FA044494643FF5D7EA181C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A7846D9C18EDA66C121EF17 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6716C7B025A9A752B8545B7B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCDebuggerDemo/Pods-OCDebuggerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5CE77026E2C55284836EBF7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCDebugger/Pods-OCDebugger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63C2037B1B25833400D027CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63152A331B259C2F0072F9F4 /* OCDHTTPWatcherCore.m in Sources */,
+				63152A4D1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m in Sources */,
+				63152A2D1B2599BC0072F9F4 /* OCDDefine.m in Sources */,
 				63C203851B25833400D027CC /* OCDebugger.m in Sources */,
+				63152A361B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m in Sources */,
+				63152A3B1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m in Sources */,
+				63152A2A1B2599B60072F9F4 /* OCDCore.m in Sources */,
+				63152A591B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +594,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63152A5A1B25AD9C0072F9F4 /* OCDHTTPWatcherURLProtocol.m in Sources */,
+				63152A4E1B25AA060072F9F4 /* OCDDefine.m in Sources */,
+				63152A4F1B25AA060072F9F4 /* OCDHTTPWatcherDefine.m in Sources */,
+				63152A501B25AA060072F9F4 /* OCDCore.m in Sources */,
+				63152A521B25AA060072F9F4 /* OCDHTTPWatcherConnectionEntity.m in Sources */,
+				63152A531B25AA060072F9F4 /* OCDHTTPWatcherConnectionManager.m in Sources */,
+				63152A541B25AA060072F9F4 /* OCDHTTPWatcherCore.m in Sources */,
+				63152A551B25AA060072F9F4 /* OCDebugger.m in Sources */,
 				63C203AB1B258B3500D027CC /* ViewController.m in Sources */,
 				63C203A81B258B3500D027CC /* AppDelegate.m in Sources */,
 				63C203A51B258B3500D027CC /* main.m in Sources */,
@@ -485,9 +731,9 @@
 		};
 		63C203941B25833400D027CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AD46E2A98BDA90DA4A9B2A1 /* Pods-OCDebugger.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -495,9 +741,9 @@
 		};
 		63C203951B25833400D027CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 686E9B9A245E5E7ECB3552F1 /* Pods-OCDebugger.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -539,6 +785,7 @@
 		};
 		63C203C01B258B3500D027CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9595A44FC80F3405545251A /* Pods-OCDebuggerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -554,6 +801,7 @@
 		};
 		63C203C11B258B3500D027CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C9572B2570D676293937BA /* Pods-OCDebuggerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -636,6 +884,7 @@
 				63C203C11B258B3500D027CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63C203C51B258B3500D027CC /* Build configuration list for PBXNativeTarget "OCDebuggerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -644,6 +893,7 @@
 				63C203C31B258B3500D027CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

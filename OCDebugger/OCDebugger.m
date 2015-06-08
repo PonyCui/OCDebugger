@@ -7,7 +7,12 @@
 //
 
 #import "OCDebugger.h"
+#import "OCDDefine.h"
 
 @implementation OCDebugger
+
++ (void)setEnabled:(BOOL)enabled {
+    [[[OCDDefine sharedDefine] HTTPWatcher] setEnabled:YES];
+}
 
 @end
