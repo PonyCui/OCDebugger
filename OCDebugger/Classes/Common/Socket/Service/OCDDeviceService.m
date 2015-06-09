@@ -24,7 +24,7 @@
     self = [super init];
     if (self) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(handleUpdateTimerTrigger) userInfo:nil repeats:YES];
+            self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(handleUpdateTimerTrigger) userInfo:nil repeats:YES];
         });
     }
     return self;
