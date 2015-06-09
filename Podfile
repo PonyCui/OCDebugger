@@ -4,6 +4,7 @@
 target 'OCDebugger' do
 
 pod 'Aspects'
+pod 'SocketRocket'
 
 end
 
@@ -14,6 +15,7 @@ end
 target 'OCDebuggerDemo' do
 
 pod 'Aspects'
+pod 'SocketRocket'
 
 end
 
