@@ -10,6 +10,7 @@
 #import "OCDProtocolHelper.h"
 #import "OCDSubService.h"
 #import "OCDCore.h"
+#import "OCDDefine.h"
 #import <SocketRocket/SRWebSocket.h>
 
 @interface OCDConnService ()<SRWebSocketDelegate>
@@ -38,7 +39,7 @@
 }
 
 - (void)requestWebSocketURLStringWithCompletionBlock:(void (^)())completionBlock {
-    NSString *URLString = @"";//[[[PPMDefine sharedDefine] sync] requestSocketAddressURLString];
+    NSString *URLString = [[OCDDefine sharedDefine] socketAddressRequestURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLString]];
     [NSURLConnection
      sendAsynchronousRequest:request
