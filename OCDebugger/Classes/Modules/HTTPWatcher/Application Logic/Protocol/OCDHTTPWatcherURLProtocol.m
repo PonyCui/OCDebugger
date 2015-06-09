@@ -13,10 +13,32 @@
 @implementation OCDHTTPWatcherURLProtocol
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
+    if ([NSURLProtocol propertyForKey:@"hello" inRequest:request] != nil) {
+        return NO;
+    }
     OCDHTTPWatcherConnectionEntity *connectionItem = [[OCDHTTPWatcherConnectionEntity alloc]
                                                       initWithReqeust:request];
     [[[[OCDCore sharedCore] HTTPWatcher] connectionManager] deliverItem:connectionItem];
-    return NO;
+    return YES;
+}
+
++ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
+    NSMutableURLRequest *mutableReqeust = [request mutableCopy];
+    [NSURLProtocol setProperty:@"1" forKey:@"hello" inRequest:mutableReqeust];
+    return [mutableReqeust copy];
+}
+
+- (void)startLoading {
+    [NSURLConnection sendAsynchronousRequest:self.request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (connectionError) {
+            [self.client URLProtocol:self didFailWithError:connectionError];
+        }
+        else {
+            [self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageAllowed];
+            [self.client URLProtocol:self didLoadData:data];
+            [self.client URLProtocolDidFinishLoading:self];
+        }
+    }];
 }
 
 @end

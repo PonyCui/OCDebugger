@@ -22,6 +22,21 @@
     return self;
 }
 
+- (instancetype)initWithResponse:(NSURLResponse *)response {
+    self = [super init];
+    if (self) {
+        self.responseURLString = response.URL.absoluteString;
+        self.responseMIMEType = response.MIMEType;
+        if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+            NSHTTPURLResponse *theResponse = (id)response;
+            self.responseStatusCode = [NSString stringWithFormat:@"%ld", (long)theResponse.statusCode];
+            self.responseHeader = [[theResponse allHeaderFields] description];
+            
+        }
+    }
+    return self;
+}
+
 - (NSDictionary *)toDictionary {
     return @{
              @"requestURLString": TOString(self.requestURLString),

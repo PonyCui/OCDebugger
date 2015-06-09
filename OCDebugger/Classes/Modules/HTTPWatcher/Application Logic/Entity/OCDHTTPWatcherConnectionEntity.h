@@ -16,7 +16,19 @@
 
 @property (nonatomic, copy) NSString *requestMethod;
 
+@property (nonatomic, copy) NSString *responseURLString;
+
+@property (nonatomic, copy) NSString *responseStatusCode;
+
+@property (nonatomic, copy) NSString *responseMIMEType;
+
+@property (nonatomic, copy) NSString *responseHeader;
+
+@property (nonatomic, copy) NSString *responseDataBase64String;
+
 - (instancetype)initWithReqeust:(NSURLRequest *)request;
+
+- (instancetype)initWithResponse:(NSURLResponse *)response;
 
 - (NSDictionary *)toDictionary;
 
