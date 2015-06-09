@@ -22,7 +22,7 @@
     return self;
 }
 
-- (instancetype)initWithResponse:(NSURLResponse *)response {
+- (instancetype)initWithResponse:(NSURLResponse *)response data:(NSData *)data {
     self = [super init];
     if (self) {
         self.responseURLString = response.URL.absoluteString;
@@ -31,7 +31,16 @@
             NSHTTPURLResponse *theResponse = (id)response;
             self.responseStatusCode = [NSString stringWithFormat:@"%ld", (long)theResponse.statusCode];
             self.responseHeader = [[theResponse allHeaderFields] description];
-            
+            if ([data length] > 1024 * 256) {
+                //Bigger than 256K, will discard transfer to server.
+                self.responseString = @"Bigger than 256K, will discard transfer to server.";
+            }
+            else {
+                NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                if (dataString != nil && [dataString isKindOfClass:[NSString class]]) {
+                    self.responseString = dataString;
+                }
+            }
         }
     }
     return self;
@@ -39,9 +48,16 @@
 
 - (NSDictionary *)toDictionary {
     return @{
+             @"orderID": TOString(self.orderID),
              @"requestURLString": TOString(self.requestURLString),
-             @"requestDate": [NSString stringWithFormat:@"%ld", (long)[self.requestDate timeIntervalSince1970]],
-             @"requestMethod": TOString(self.requestMethod)
+             @"requestDate": [NSString stringWithFormat:@"%ld",
+                              (long)[self.requestDate timeIntervalSince1970]],
+             @"requestMethod": TOString(self.requestMethod),
+             @"responseURLString": TOString(self.responseURLString),
+             @"responseMIMEType": TOString(self.responseMIMEType),
+             @"responseStatusCode": TOString(self.responseStatusCode),
+             @"responseHeader": TOString(self.responseHeader),
+             @"responseString": TOString(self.responseString)
              };
 }
 

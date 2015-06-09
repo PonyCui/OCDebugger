@@ -25,11 +25,13 @@
 {
     self = [super init];
     if (self) {
-        self.retryTimer = [NSTimer scheduledTimerWithTimeInterval:2.0
-                                                           target:self
-                                                         selector:@selector(handleRetryTimerTrigger)
-                                                         userInfo:nil
-                                                          repeats:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.retryTimer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                               target:self
+                                                             selector:@selector(handleRetryTimerTrigger)
+                                                             userInfo:nil
+                                                              repeats:YES];
+        });
     }
     return self;
 }

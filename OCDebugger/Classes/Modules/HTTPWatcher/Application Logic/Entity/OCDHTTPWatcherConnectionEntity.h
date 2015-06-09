@@ -10,6 +10,8 @@
 
 @interface OCDHTTPWatcherConnectionEntity : NSObject
 
+@property (nonatomic, copy) NSString *orderID;
+
 @property (nonatomic, copy) NSString *requestURLString;
 
 @property (nonatomic, strong) NSDate *requestDate;
@@ -24,11 +26,11 @@
 
 @property (nonatomic, copy) NSString *responseHeader;
 
-@property (nonatomic, copy) NSString *responseDataBase64String;
+@property (nonatomic, copy) NSString *responseString;
 
 - (instancetype)initWithReqeust:(NSURLRequest *)request;
 
-- (instancetype)initWithResponse:(NSURLResponse *)response;
+- (instancetype)initWithResponse:(NSURLResponse *)response data:(NSData *)data;
 
 - (NSDictionary *)toDictionary;
 
