@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) OCDHTTPWatcherDefine *HTTPWatcher;
 
+@property (nonatomic, readonly) NSString *socketAddressRequestURLString;
+
 @end

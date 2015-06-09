@@ -7,11 +7,10 @@
 //
 
 #import "OCDSubService.h"
-#import "PPMApplication.h"
 #import "OCDConnService.h"
-#import "PPMProtocolHelper.h"
-#import "PPMValueFormatter.h"
-#import "PPMAccountItem.h"
+#import "OCDProtocolHelper.h"
+#import "OCDValueFormatter.h"
+#import "OCDCore.h"
 
 @interface OCDSubService ()
 
@@ -24,18 +23,18 @@
 @implementation OCDSubService
 
 - (void)addObserver {
-    NSString *userID = TOString([[[AccountCore accountManager] activeAccount] userID]);
-    NSString *sessionToken = TOString([[[AccountCore accountManager] activeAccount] sessionToken]);
-    NSString *message = [PPMProtocolHelper messageWithService:@"sub"
+    NSString *userID = @"1";
+    NSString *sessionToken = @"testToken";
+    NSString *message = [OCDProtocolHelper messageWithService:@"sub"
                                                        method:@"addObserver"
                                                        params:@{@"user_id":userID,
                                                                 @"session_token":sessionToken}];
-    [[[SyncCore socketServiceManager] conn] sendMessage:message];
+    [[[[OCDCore sharedCore] socketService] conn] sendMessage:message];
 }
 
 - (void)heartBeat {
-    NSString *message = [PPMProtocolHelper messageWithService:@"sub" method:@"heartBeat" params:nil];
-    [[[SyncCore socketServiceManager] conn] sendMessage:message];
+    NSString *message = [OCDProtocolHelper messageWithService:@"sub" method:@"heartBeat" params:nil];
+    [[[[OCDCore sharedCore] socketService] conn] sendMessage:message];
     self.heartBeatTimeoutTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
                                                                   target:self
                                                                 selector:@selector(heartBeatTimeoutTimer)
@@ -45,12 +44,11 @@
 
 - (void)heartBeatTimeout {
     NSLog(@"[Error] fail to receive heart beat.");
-    [[[SyncCore socketServiceManager] conn] disconnect];
+    [[[[OCDCore sharedCore] socketService] conn] disconnect];
 }
 
 - (void)didAddObserver {
     NSLog(@"didAddObserver");
-    [[SyncCore syncManager] performSyncActions];
     [self.heartBeatTimer invalidate];
     self.heartBeatTimer = [NSTimer scheduledTimerWithTimeInterval:60.0
                                                            target:self

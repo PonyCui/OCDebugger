@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class OCDConnService, OCDSubService, PPMSyncTestService, PPMSyncUserService, PPMSyncChatService;
+@class OCDConnService, OCDSubService;
 
 @interface OCDSocketServiceManager : NSObject
 

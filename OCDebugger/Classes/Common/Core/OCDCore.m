@@ -26,4 +26,11 @@
     return _HTTPWatcher;
 }
 
+- (OCDSocketServiceManager *)socketService {
+    if (_socketService == nil) {
+        _socketService = [[OCDSocketServiceManager alloc] init];
+    }
+    return _socketService;
+}
+
 @end

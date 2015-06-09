@@ -7,9 +7,9 @@
 //
 
 #import "OCDConnService.h"
-#import "PPMApplication.h"
-#import "PPMProtocolHelper.h"
+#import "OCDProtocolHelper.h"
 #import "OCDSubService.h"
+#import "OCDCore.h"
 #import <SocketRocket/SRWebSocket.h>
 
 @interface OCDConnService ()<SRWebSocketDelegate>
@@ -27,32 +27,18 @@
 - (void)dealloc
 {
     self.webSocketConnection.delegate = nil;
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(handlePPMAccountChangedNotification)
-                                                     name:kPPMAccountChangedNotification
-                                                   object:nil];
     }
     return self;
 }
 
-- (void)handlePPMAccountChangedNotification {
-    if ([[AccountCore accountManager] activeAccount] == nil) {
-        [self disconnect];
-    }
-    else {
-        [self connect];
-    }
-}
-
 - (void)requestWebSocketURLStringWithCompletionBlock:(void (^)())completionBlock {
-    NSString *URLString = [[[PPMDefine sharedDefine] sync] requestSocketAddressURLString];
+    NSString *URLString = @"";//[[[PPMDefine sharedDefine] sync] requestSocketAddressURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLString]];
     [NSURLConnection
      sendAsynchronousRequest:request
@@ -77,9 +63,6 @@
 }
 
 - (void)connect {
-    if ([[AccountCore accountManager] activeAccount] == nil) {
-        return;
-    }
     if (self.webSocketURLString == nil || ![self.webSocketURLString hasPrefix:@"ws://"]) {
         [self requestWebSocketURLStringWithCompletionBlock:^{
             [self connect];
@@ -113,16 +96,16 @@
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
     self.retryCount = 0;
-    [[[SyncCore socketServiceManager] sub] addObserver];
+    [[[[OCDCore sharedCore] socketService] sub] addObserver];
 }
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Warc-performSelector-leaks"
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
-    PPMProtocolHelper *protoHelper = [[PPMProtocolHelper alloc] initWithMessageString:message];
+    OCDProtocolHelper *protoHelper = [[OCDProtocolHelper alloc] initWithMessageString:message];
     if (protoHelper.error == nil) {
-        if ([[SyncCore socketServiceManager] respondsToSelector:NSSelectorFromString(protoHelper.service)]) {
-            NSObject *serviceObject = [[SyncCore socketServiceManager] performSelector:NSSelectorFromString(protoHelper.service)
+        if ([[[OCDCore sharedCore] socketService] respondsToSelector:NSSelectorFromString(protoHelper.service)]) {
+            NSObject *serviceObject = [[[OCDCore sharedCore] socketService] performSelector:NSSelectorFromString(protoHelper.service)
                                                                             withObject:nil];
             if ([serviceObject respondsToSelector:NSSelectorFromString(protoHelper.method)]) {
                 [serviceObject performSelector:NSSelectorFromString(protoHelper.method) withObject:nil];

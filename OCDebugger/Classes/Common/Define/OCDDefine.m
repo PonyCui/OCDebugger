@@ -28,4 +28,8 @@
     return _HTTPWatcher;
 }
 
+- (NSString *)socketAddressRequestURLString {
+    return @"http://127.0.0.1/OCDServer/index.php/pubsub/index";
+}
+
 @end

@@ -8,10 +8,7 @@
 
 #import "OCDSocketServiceManager.h"
 #import "OCDConnService.h"
-#import "PPMSyncSubService.h"
-#import "PPMSyncTestService.h"
-#import "PPMSyncUserService.h"
-#import "PPMSyncChatService.h"
+#import "OCDSubService.h"
 
 @implementation OCDSocketServiceManager
 
@@ -20,10 +17,7 @@
     self = [super init];
     if (self) {
         _conn = [[OCDConnService alloc] init];
-        _sub = [[PPMSyncSubService alloc] init];
-        _test = [[PPMSyncTestService alloc] init];
-        _user = [[PPMSyncUserService alloc] init];
-        _chat = [[PPMSyncChatService alloc] init];
+        _sub = [[OCDSubService alloc] init];
     }
     return self;
 }
