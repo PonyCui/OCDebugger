@@ -10,6 +10,7 @@
 #import "OCDConnService.h"
 #import "OCDPubService.h"
 #import "OCDSubService.h"
+#import "OCDDeviceService.h"
 
 @class OCDConnService, OCDSubService, OCDPubService;
 
@@ -20,5 +21,7 @@
 @property (nonatomic, readonly) OCDSubService *sub;
 
 @property (nonatomic, readonly) OCDPubService *pub;
+
+@property (nonatomic, readonly) OCDDeviceService *device;
 
 @end
