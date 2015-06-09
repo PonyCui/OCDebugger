@@ -8,6 +8,8 @@
 
 #import "OCDHTTPWatcherConnectionManager.h"
 #import "OCDHTTPWatcherURLProtocol.h"
+#import "OCDHTTPWatcherConnectionEntity.h"
+#import "OCDCore.h"
 
 @interface OCDHTTPWatcherConnectionManager ()
 
@@ -21,6 +23,12 @@
 
 - (void)unregisterHookers {
     [NSURLProtocol unregisterClass:[OCDHTTPWatcherURLProtocol class]];
+}
+
+- (void)deliverItem:(OCDHTTPWatcherConnectionEntity *)item {
+    [[[[OCDCore sharedCore] socketService] pub] pubMessageToService:@"HTTPWatcher"
+                                                             method:@"connection"
+                                                             params:[item toDictionary]];
 }
 
 @end

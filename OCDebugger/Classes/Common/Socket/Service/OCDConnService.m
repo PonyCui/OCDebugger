@@ -88,6 +88,7 @@
 #pragma mark - SRWebSocketDelegate
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
+    [[[[OCDCore sharedCore] socketService] sub] setIsObserverAdded:NO];
     if (self.retryCount < 10) {
         NSLog(@"Will reconnect after 5s.");
         self.retryCount++;
@@ -121,6 +122,7 @@
 #pragma GCC diagnostic pop
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
+    [[[[OCDCore sharedCore] socketService] sub] setIsObserverAdded:NO];
     [self requestWebSocketURLStringWithCompletionBlock:^{
         [self connect];
     }];

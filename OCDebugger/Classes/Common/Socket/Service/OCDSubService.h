@@ -10,6 +10,8 @@
 
 @interface OCDSubService : NSObject
 
+@property (nonatomic, assign) BOOL isObserverAdded;
+
 - (void)addObserver;
 
 @end

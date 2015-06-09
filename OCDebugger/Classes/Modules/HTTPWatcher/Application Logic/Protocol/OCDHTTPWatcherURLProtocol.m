@@ -7,11 +7,15 @@
 //
 
 #import "OCDHTTPWatcherURLProtocol.h"
+#import "OCDHTTPWatcherConnectionEntity.h"
+#import "OCDCore.h"
 
 @implementation OCDHTTPWatcherURLProtocol
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
-    
+    OCDHTTPWatcherConnectionEntity *connectionItem = [[OCDHTTPWatcherConnectionEntity alloc]
+                                                      initWithReqeust:request];
+    [[[[OCDCore sharedCore] HTTPWatcher] connectionManager] deliverItem:connectionItem];
     return NO;
 }
 

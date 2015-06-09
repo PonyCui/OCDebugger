@@ -43,11 +43,13 @@
 }
 
 - (void)heartBeatTimeout {
+    self.isObserverAdded = NO;
     NSLog(@"[Error] fail to receive heart beat.");
     [[[[OCDCore sharedCore] socketService] conn] disconnect];
 }
 
 - (void)didAddObserver {
+    self.isObserverAdded = YES;
     NSLog(@"didAddObserver");
     [self.heartBeatTimer invalidate];
     self.heartBeatTimer = [NSTimer scheduledTimerWithTimeInterval:60.0
@@ -58,6 +60,7 @@
 }
 
 - (void)didReceivedError:(NSDictionary *)params {
+    self.isObserverAdded = NO;
     NSLog(@"[Error] code:%@, desc:%@", TODictionary(params)[@"error_code"], TODictionary(params)[@"error_description"]);
 }
 

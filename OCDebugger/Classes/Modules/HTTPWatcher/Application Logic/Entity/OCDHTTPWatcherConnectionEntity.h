@@ -16,4 +16,8 @@
 
 @property (nonatomic, copy) NSString *requestMethod;
 
+- (instancetype)initWithReqeust:(NSURLRequest *)request;
+
+- (NSDictionary *)toDictionary;
+
 @end

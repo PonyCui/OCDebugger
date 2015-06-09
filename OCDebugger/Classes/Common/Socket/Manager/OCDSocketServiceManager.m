@@ -9,6 +9,7 @@
 #import "OCDSocketServiceManager.h"
 #import "OCDConnService.h"
 #import "OCDSubService.h"
+#import "OCDPubService.h"
 
 @implementation OCDSocketServiceManager
 
@@ -18,6 +19,7 @@
     if (self) {
         _conn = [[OCDConnService alloc] init];
         _sub = [[OCDSubService alloc] init];
+        _pub = [[OCDPubService alloc] init];
     }
     return self;
 }

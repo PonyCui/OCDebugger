@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class OCDHTTPWatcherConnectionEntity;
+
 @interface OCDHTTPWatcherConnectionManager : NSObject
 
 - (void)registerHookers;
 
 - (void)unregisterHookers;
+
+- (void)deliverItem:(OCDHTTPWatcherConnectionEntity *)item;
 
 @end
