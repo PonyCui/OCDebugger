@@ -31,9 +31,9 @@
             NSHTTPURLResponse *theResponse = (id)response;
             self.responseStatusCode = [NSString stringWithFormat:@"%ld", (long)theResponse.statusCode];
             self.responseHeader = [[theResponse allHeaderFields] description];
-            if ([data length] > 1024 * 256) {
-                //Bigger than 256K, will discard transfer to server.
-                self.responseString = @"Bigger than 256K, will discard transfer to server.";
+            if ([data length] > 1024 * 64) {
+                //Bigger than 64K, will discard transfer to server.
+                self.responseString = @"Bigger than 64K, will discard transfer to server.";
             }
             else {
                 NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

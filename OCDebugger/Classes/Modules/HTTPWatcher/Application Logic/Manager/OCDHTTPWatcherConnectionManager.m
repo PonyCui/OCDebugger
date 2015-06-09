@@ -28,7 +28,7 @@
 
 - (void)deliverItem:(OCDHTTPWatcherConnectionEntity *)item {
     [[[[OCDCore sharedCore] socketService] pub] pubMessageToService:@"HTTPWatcher"
-                                                             method:@"connection"
+                                                             method:@"updateConnection"
                                                              params:[item toDictionary]];
 }
 
