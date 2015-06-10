@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 PonyCui. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "OCDHTTPWatcherConnectionEntity.h"
 #import "OCDValueFormatter.h"
 
@@ -31,8 +32,8 @@
             NSHTTPURLResponse *theResponse = (id)response;
             self.responseStatusCode = [NSString stringWithFormat:@"%ld", (long)theResponse.statusCode];
             self.responseHeader = [[theResponse allHeaderFields] description];
-            if ([data length] > 1024 * 64) {
-                //Bigger than 64K, will discard transfer to server.
+            if ([data length] > 1024 * 32) {
+                //Bigger than 32K, will discard transfer to server.
                 self.responseString = @"Bigger than 64K, will discard transfer to server.";
             }
             else {
@@ -48,6 +49,7 @@
 
 - (NSDictionary *)toDictionary {
     return @{
+             @"deviceIdentifier": TOString([[[UIDevice currentDevice] identifierForVendor] UUIDString]),
              @"orderID": TOString(self.orderID),
              @"requestURLString": TOString(self.requestURLString),
              @"requestDate": [NSString stringWithFormat:@"%ld",
