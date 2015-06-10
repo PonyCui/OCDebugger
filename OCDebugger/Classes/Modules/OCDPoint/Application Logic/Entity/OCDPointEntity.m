@@ -7,7 +7,17 @@
 //
 
 #import "OCDPointEntity.h"
+#import "OCDValueFormatter.h"
 
 @implementation OCDPointEntity
+
+- (NSDictionary *)toDictionary {
+    return @{
+             @"pointIdentifier": TOString(self.pointIdentifier),
+             @"pointValue": @(self.pointValue),
+             @"pointObject": TOString([self.pointObject description]),
+             @"isValid": @(self.isValid)
+             };
+}
 
 @end

@@ -17,6 +17,10 @@
 
 @implementation OCDPointManager
 
+- (NSArray *)allItems {
+    return [self.items allValues];
+}
+
 - (void)addPointItem:(OCDPointEntity *)item {
     if (self.items[item.pointIdentifier] != nil) {
         return;

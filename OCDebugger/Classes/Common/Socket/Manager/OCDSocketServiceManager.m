@@ -11,6 +11,7 @@
 #import "OCDSubService.h"
 #import "OCDPubService.h"
 #import "OCDDeviceService.h"
+#import "OCDPointService.h"
 
 @implementation OCDSocketServiceManager
 
@@ -22,6 +23,7 @@
         _sub = [[OCDSubService alloc] init];
         _pub = [[OCDPubService alloc] init];
         _device = [[OCDDeviceService alloc] init];
+        _point = [[OCDPointService alloc] init];
     }
     return self;
 }

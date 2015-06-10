@@ -12,8 +12,12 @@
 
 @property (nonatomic, copy) NSString *pointIdentifier;
 
-@property (nonatomic, assign) BOOL pointValue;
+@property (nonatomic, assign) NSInteger pointValue;
+
+@property (nonatomic, strong) id pointObject;
 
 @property (nonatomic, assign) BOOL isValid;
+
+- (NSDictionary *)toDictionary;
 
 @end

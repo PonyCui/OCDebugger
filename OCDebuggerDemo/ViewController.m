@@ -37,7 +37,7 @@
 }
 
 - (BOOL)testPoint {
-    [OCDebugger addPointWithIdentifier:@"test" pointValue:YES];
+    [OCDebugger addPointWithIdentifier:@"test" pointValue:YES pointObject:nil];
     if ([OCDebugger isPointValid:@"test"]) {
         return [OCDebugger pointValue:@"test"];
     }

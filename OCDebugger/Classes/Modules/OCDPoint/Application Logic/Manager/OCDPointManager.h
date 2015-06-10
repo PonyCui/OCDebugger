@@ -12,6 +12,8 @@
 
 @interface OCDPointManager : NSObject
 
+- (NSArray *)allItems;
+
 - (void)addPointItem:(OCDPointEntity *)item;
 
 - (OCDPointEntity *)pointWithIdentifier:(NSString *)pointIdentifier;

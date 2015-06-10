@@ -17,10 +17,11 @@
     [[[[OCDCore sharedCore] socketService] conn] connect];
 }
 
-+ (void)addPointWithIdentifier:(NSString *)identifier pointValue:(BOOL)pointValue {
++ (void)addPointWithIdentifier:(NSString *)identifier pointValue:(NSInteger)pointValue pointObject:(id)pointObject {
     OCDPointEntity *pointItem = [[OCDPointEntity alloc] init];
     pointItem.pointIdentifier = identifier;
     pointItem.pointValue = pointValue;
+    pointItem.pointObject = pointObject;
     [[[[OCDCore sharedCore] point] manager] addPointItem:pointItem];
 }
 
@@ -30,6 +31,10 @@
 
 + (BOOL)pointValue:(NSString *)identifier {
     return [[[[[OCDCore sharedCore] point] manager] pointWithIdentifier:identifier] pointValue];
+}
+
++ (id)pointObject:(NSString *)identifier {
+    return [[[[[OCDCore sharedCore] point] manager] pointWithIdentifier:identifier] pointObject];
 }
 
 @end
