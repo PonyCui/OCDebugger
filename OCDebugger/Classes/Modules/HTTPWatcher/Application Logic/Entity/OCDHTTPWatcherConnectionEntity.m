@@ -19,6 +19,7 @@
         self.requestURLString = request.URL.absoluteString;
         self.requestDate = [NSDate date];
         self.requestMethod = [request HTTPMethod];
+        self.requestHeader = [[request allHTTPHeaderFields] description];
     }
     return self;
 }
@@ -34,7 +35,7 @@
             self.responseHeader = [[theResponse allHeaderFields] description];
             if ([data length] > 1024 * 32) {
                 //Bigger than 32K, will discard transfer to server.
-                self.responseString = @"Bigger than 64K, will discard transfer to server.";
+                self.responseString = @"Bigger than 32K, will discard transfer to server.";
             }
             else {
                 NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -55,6 +56,7 @@
              @"requestDate": [NSString stringWithFormat:@"%ld",
                               (long)[self.requestDate timeIntervalSince1970]],
              @"requestMethod": TOString(self.requestMethod),
+             @"requestHeader": TOString(self.requestHeader),
              @"responseURLString": TOString(self.responseURLString),
              @"responseMIMEType": TOString(self.responseMIMEType),
              @"responseStatusCode": TOString(self.responseStatusCode),
