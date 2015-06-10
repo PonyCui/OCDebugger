@@ -26,6 +26,13 @@
     return _HTTPWatcher;
 }
 
+- (OCDPointCore *)point {
+    if (_point == nil) {
+        _point = [[OCDPointCore alloc] init];
+    }
+    return _point;
+}
+
 - (OCDSocketServiceManager *)socketService {
     if (_socketService == nil) {
         _socketService = [[OCDSocketServiceManager alloc] init];

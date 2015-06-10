@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "OCDHTTPWatcherCore.h"
 #import "OCDSocketServiceManager.h"
+#import "OCDPointCore.h"
 
 @interface OCDCore : NSObject
 
 + (OCDCore *)sharedCore;
 
 @property (nonatomic, strong) OCDHTTPWatcherCore *HTTPWatcher;
+
+@property (nonatomic, strong) OCDPointCore *point;
 
 @property (nonatomic, strong) OCDSocketServiceManager *socketService;
 

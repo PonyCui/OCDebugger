@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "OCDebugger.h"
 
 @interface ViewController ()
 
@@ -32,6 +33,15 @@
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com/"]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         
     }];
+    NSLog(@"testPoint Bool = %d", [self testPoint]);
+}
+
+- (BOOL)testPoint {
+    [OCDebugger addPointWithIdentifier:@"test" pointValue:YES];
+    if ([OCDebugger isPointValid:@"test"]) {
+        return [OCDebugger pointValue:@"test"];
+    }
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning {

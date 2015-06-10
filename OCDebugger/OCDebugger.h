@@ -12,4 +12,10 @@
 
 + (void)setEnabled:(BOOL)enabled;
 
++ (void)addPointWithIdentifier:(NSString *)identifier pointValue:(BOOL)pointValue;
+
++ (BOOL)isPointValid:(NSString *)identifier;
+
++ (BOOL)pointValue:(NSString *)identifier;
+
 @end
