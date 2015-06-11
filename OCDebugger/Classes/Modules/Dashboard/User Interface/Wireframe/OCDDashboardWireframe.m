@@ -75,7 +75,7 @@
         [_alertView addButtonWithTitle:@"Device Information"];
         [_alertView addButtonWithTitle:@"Debug Point"];
         [_alertView addButtonWithTitle:@"Log"];
-        [_alertView addButtonWithTitle:@"HTTP Watcher"];
+//        [_alertView addButtonWithTitle:@"HTTP Watcher"];
         [_alertView addButtonWithTitle:@"Cancel"];
         [_alertView setCancelButtonIndex:[_alertView numberOfButtons]-1];
     }

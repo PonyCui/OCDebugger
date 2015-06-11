@@ -10,6 +10,13 @@
 #import "OCDCore.h"
 
 void OCDLog(const char * file, int lineNumber, const char *functionName, NSString *format, ...) {
+    if (![[[OCDCore sharedCore] log] enabled]) {
+        va_list ap;
+        va_start(ap, format);
+        NSLogv(format, ap);
+        va_end (ap);
+        return;
+    }
     va_list ap;
     va_start(ap, format);
     if (![format hasSuffix: @"\n"])

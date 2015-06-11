@@ -10,12 +10,24 @@
 #import "OCDCore.h"
 #import "OCDDefine.h"
 
+static BOOL isEnabled;
+
 @implementation OCDebugger
 
 + (void)setEnabled:(BOOL)enabled {
-    [[[OCDDefine sharedDefine] HTTPWatcher] setEnabled:YES];
-    [[[[OCDCore sharedCore] socketService] conn] connect];
-    [[[OCDCore sharedCore] dashboard] install];
+    isEnabled = enabled;
+    if (enabled) {
+        [[[OCDDefine sharedDefine] HTTPWatcher] setEnabled:YES];
+        [[[[OCDCore sharedCore] socketService] conn] connect];
+        [[[OCDCore sharedCore] dashboard] install];
+        [[[OCDCore sharedCore] log] setEnabled:YES];
+    }
+    else {
+        [[[OCDDefine sharedDefine] HTTPWatcher] setEnabled:NO];
+        [[[[OCDCore sharedCore] socketService] conn] disconnect];
+        [[[OCDCore sharedCore] dashboard] uninstall];
+        [[[OCDCore sharedCore] log] setEnabled:NO];
+    }
 }
 
 + (void)addPointWithIdentifier:(NSString *)identifier pointValue:(NSInteger)pointValue pointObject:(id)pointObject {
@@ -27,6 +39,9 @@
 }
 
 + (BOOL)isPointValid:(NSString *)identifier {
+    if (!isEnabled) {
+        return NO;
+    }
     return [[[[OCDCore sharedCore] point] manager] isPointValidWithPointIdentifier:identifier];
 }
 

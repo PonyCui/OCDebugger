@@ -13,12 +13,15 @@
 
 @interface OCDDashboardShakeHooker ()
 
+@property (nonatomic, strong) id<AspectToken> viewDidAppearToken;
+@property (nonatomic, strong) id<AspectToken> motionEndToken;
+
 @end
 
 @implementation OCDDashboardShakeHooker
 
 - (void)install {
-    [UIViewController aspect_hookSelector:@selector(viewDidAppear:)
+    self.viewDidAppearToken = [UIViewController aspect_hookSelector:@selector(viewDidAppear:)
                               withOptions:AspectPositionAfter
                                usingBlock:^(id<AspectInfo> info){
                                    UIViewController *viewController = [info instance];
@@ -26,7 +29,7 @@
                                    [viewController becomeFirstResponder];
                                }
                                     error:NULL];
-    [UIResponder aspect_hookSelector:@selector(motionEnded:withEvent:)
+    self.motionEndToken = [UIResponder aspect_hookSelector:@selector(motionEnded:withEvent:)
                               withOptions:AspectPositionAfter
                                usingBlock:^(){
                                    [[[[OCDCore sharedCore] dashboard] wireframe] showAlertView];
@@ -35,7 +38,8 @@
 }
 
 - (void)uninstall {
-    
+    [self.viewDidAppearToken remove];
+    [self.motionEndToken remove];
 }
 
 @end

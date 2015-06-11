@@ -14,6 +14,8 @@ void OCDLog(const char * file, int lineNumber, const char *functionName, NSStrin
 
 @interface OCDLogCore : NSObject
 
+@property (nonatomic, assign) BOOL enabled;
+
 @property (nonatomic, strong) OCDLogManager *manager;
 
 + (void)addLogItem:(OCDLogEntity *)item;
