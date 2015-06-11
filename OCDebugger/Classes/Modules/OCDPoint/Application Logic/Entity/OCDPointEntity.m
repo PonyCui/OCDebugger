@@ -20,4 +20,21 @@
              };
 }
 
+- (NSString *)cacheKey {
+    return [NSString stringWithFormat:@"OCDebugger.Point.Identifier.%@", self.pointIdentifier];
+}
+
+#pragma mark - Setter
+
+- (void)setIsValid:(BOOL)isValid {
+    _isValid = isValid;
+    [[NSUserDefaults standardUserDefaults] setObject:@(_isValid) forKey:[self cacheKey]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setPointIdentifier:(NSString *)pointIdentifier {
+    _pointIdentifier = pointIdentifier;
+    _isValid = [[[NSUserDefaults standardUserDefaults] objectForKey:[self cacheKey]] boolValue];
+}
+
 @end
