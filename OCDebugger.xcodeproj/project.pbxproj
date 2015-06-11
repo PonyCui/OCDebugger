@@ -33,6 +33,14 @@
 		633209161B28279F00258278 /* OCDPointCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209091B281FFA00258278 /* OCDPointCore.m */; };
 		633209191B283CC900258278 /* OCDPointService.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209181B283CC900258278 /* OCDPointService.m */; };
 		6332091A1B284BE600258278 /* OCDPointService.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209181B283CC900258278 /* OCDPointService.m */; };
+		633209221B29297700258278 /* OCDDashboardCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209211B29297700258278 /* OCDDashboardCore.m */; };
+		6332092E1B292B7700258278 /* OCDDashboardHookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332092D1B292B7700258278 /* OCDDashboardHookManager.m */; };
+		633209301B292D4400258278 /* OCDDashboardHookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332092D1B292B7700258278 /* OCDDashboardHookManager.m */; };
+		633209311B292D4400258278 /* OCDDashboardCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209211B29297700258278 /* OCDDashboardCore.m */; };
+		633209341B292DD000258278 /* OCDDashboardShakeHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209321B292DD000258278 /* OCDDashboardShakeHooker.m */; };
+		633209351B292DD800258278 /* OCDDashboardShakeHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209321B292DD000258278 /* OCDDashboardShakeHooker.m */; };
+		633209381B29312200258278 /* OCDDashboardWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209371B29312200258278 /* OCDDashboardWireframe.m */; };
+		633209391B29320A00258278 /* OCDDashboardWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209371B29312200258278 /* OCDDashboardWireframe.m */; };
 		636CF0641B26E85A0078D48E /* OCDDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0631B26E85A0078D48E /* OCDDeviceService.m */; };
 		636CF0651B26E8630078D48E /* OCDDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0631B26E85A0078D48E /* OCDDeviceService.m */; };
 		63C203831B25833400D027CC /* OCDebugger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C203821B25833400D027CC /* OCDebugger.h */; };
@@ -118,6 +126,14 @@
 		633209111B2820A600258278 /* OCDPointManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDPointManager.m; sourceTree = "<group>"; };
 		633209171B283CC900258278 /* OCDPointService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDPointService.h; sourceTree = "<group>"; };
 		633209181B283CC900258278 /* OCDPointService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDPointService.m; sourceTree = "<group>"; };
+		633209201B29297700258278 /* OCDDashboardCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDashboardCore.h; sourceTree = "<group>"; };
+		633209211B29297700258278 /* OCDDashboardCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDashboardCore.m; sourceTree = "<group>"; };
+		6332092C1B292B7700258278 /* OCDDashboardHookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDashboardHookManager.h; sourceTree = "<group>"; };
+		6332092D1B292B7700258278 /* OCDDashboardHookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDashboardHookManager.m; sourceTree = "<group>"; };
+		633209321B292DD000258278 /* OCDDashboardShakeHooker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDashboardShakeHooker.m; sourceTree = "<group>"; };
+		633209331B292DD000258278 /* OCDDashboardShakeHooker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDashboardShakeHooker.h; sourceTree = "<group>"; };
+		633209361B29312200258278 /* OCDDashboardWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDashboardWireframe.h; sourceTree = "<group>"; };
+		633209371B29312200258278 /* OCDDashboardWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDashboardWireframe.m; sourceTree = "<group>"; };
 		636CF0621B26E85A0078D48E /* OCDDeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDeviceService.h; sourceTree = "<group>"; };
 		636CF0631B26E85A0078D48E /* OCDDeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDeviceService.m; sourceTree = "<group>"; };
 		63C2037F1B25833400D027CC /* libOCDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +240,7 @@
 		63152A251B2598F40072F9F4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6332091B1B29296100258278 /* Dashboard */,
 				633209051B281FC200258278 /* OCDPoint */,
 				63152A2E1B259BED0072F9F4 /* HTTPWatcher */,
 			);
@@ -374,6 +391,101 @@
 				6332090E1B28209800258278 /* OCDPointEntity.m */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		6332091B1B29296100258278 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				633209231B2929CC00258278 /* User Interface */,
+				6332091C1B29296100258278 /* Application Logic */,
+				6332091F1B29296100258278 /* Module Interface */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		6332091C1B29296100258278 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				633209281B292A6800258278 /* Hooker */,
+				6332091D1B29296100258278 /* Entity */,
+				6332091E1B29296100258278 /* Manager */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		6332091D1B29296100258278 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		6332091E1B29296100258278 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6332092C1B292B7700258278 /* OCDDashboardHookManager.h */,
+				6332092D1B292B7700258278 /* OCDDashboardHookManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		6332091F1B29296100258278 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				633209201B29297700258278 /* OCDDashboardCore.h */,
+				633209211B29297700258278 /* OCDDashboardCore.m */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		633209231B2929CC00258278 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				633209241B2929FE00258278 /* Wireframe */,
+				633209251B2929FE00258278 /* View */,
+				633209261B2929FE00258278 /* Presenter */,
+				633209271B2929FE00258278 /* Interactor */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		633209241B2929FE00258278 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				633209361B29312200258278 /* OCDDashboardWireframe.h */,
+				633209371B29312200258278 /* OCDDashboardWireframe.m */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		633209251B2929FE00258278 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		633209261B2929FE00258278 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		633209271B2929FE00258278 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		633209281B292A6800258278 /* Hooker */ = {
+			isa = PBXGroup;
+			children = (
+				633209331B292DD000258278 /* OCDDashboardShakeHooker.h */,
+				633209321B292DD000258278 /* OCDDashboardShakeHooker.m */,
+			);
+			path = Hooker;
 			sourceTree = "<group>";
 		};
 		63C203761B25833400D027CC = {
@@ -719,17 +831,21 @@
 				6332090F1B28209800258278 /* OCDPointEntity.m in Sources */,
 				6332090A1B281FFA00258278 /* OCDPointCore.m in Sources */,
 				63152A331B259C2F0072F9F4 /* OCDHTTPWatcherCore.m in Sources */,
+				633209221B29297700258278 /* OCDDashboardCore.m in Sources */,
 				63152A4D1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m in Sources */,
 				63152A651B2687B80072F9F4 /* OCDConnService.m in Sources */,
 				63CAE2A31B268A1F00650397 /* OCDSocketServiceManager.m in Sources */,
 				636CF0641B26E85A0078D48E /* OCDDeviceService.m in Sources */,
+				6332092E1B292B7700258278 /* OCDDashboardHookManager.m in Sources */,
 				63152A2D1B2599BC0072F9F4 /* OCDDefine.m in Sources */,
+				633209381B29312200258278 /* OCDDashboardWireframe.m in Sources */,
 				63C203851B25833400D027CC /* OCDebugger.m in Sources */,
 				633209191B283CC900258278 /* OCDPointService.m in Sources */,
 				63CAE2B71B269B7300650397 /* OCDPubService.m in Sources */,
 				63152A361B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m in Sources */,
 				63152A3B1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m in Sources */,
 				63CAE2AD1B268A2500650397 /* OCDValueFormatter.m in Sources */,
+				633209341B292DD000258278 /* OCDDashboardShakeHooker.m in Sources */,
 				63152A2A1B2599B60072F9F4 /* OCDCore.m in Sources */,
 				63CAE2AC1B268A2500650397 /* OCDProtocolHelper.m in Sources */,
 				63152A661B2687B80072F9F4 /* OCDSubService.m in Sources */,
@@ -750,6 +866,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633209391B29320A00258278 /* OCDDashboardWireframe.m in Sources */,
+				633209351B292DD800258278 /* OCDDashboardShakeHooker.m in Sources */,
+				633209301B292D4400258278 /* OCDDashboardHookManager.m in Sources */,
+				633209311B292D4400258278 /* OCDDashboardCore.m in Sources */,
 				6332091A1B284BE600258278 /* OCDPointService.m in Sources */,
 				633209141B28279F00258278 /* OCDPointEntity.m in Sources */,
 				633209151B28279F00258278 /* OCDPointManager.m in Sources */,

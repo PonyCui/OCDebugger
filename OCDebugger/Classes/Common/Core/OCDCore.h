@@ -10,6 +10,7 @@
 #import "OCDHTTPWatcherCore.h"
 #import "OCDSocketServiceManager.h"
 #import "OCDPointCore.h"
+#import "OCDDashboardCore.h"
 
 @interface OCDCore : NSObject
 
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) OCDHTTPWatcherCore *HTTPWatcher;
 
 @property (nonatomic, strong) OCDPointCore *point;
+
+@property (nonatomic, strong) OCDDashboardCore *dashboard;
 
 @property (nonatomic, strong) OCDSocketServiceManager *socketService;
 

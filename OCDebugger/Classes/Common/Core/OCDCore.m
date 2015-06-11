@@ -33,6 +33,13 @@
     return _point;
 }
 
+- (OCDDashboardCore *)dashboard {
+    if (_dashboard == nil) {
+        _dashboard = [[OCDDashboardCore alloc] init];
+    }
+    return _dashboard;
+}
+
 - (OCDSocketServiceManager *)socketService {
     if (_socketService == nil) {
         _socketService = [[OCDSocketServiceManager alloc] init];

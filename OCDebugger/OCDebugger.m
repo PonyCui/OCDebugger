@@ -15,6 +15,7 @@
 + (void)setEnabled:(BOOL)enabled {
     [[[OCDDefine sharedDefine] HTTPWatcher] setEnabled:YES];
     [[[[OCDCore sharedCore] socketService] conn] connect];
+    [[[OCDCore sharedCore] dashboard] install];
 }
 
 + (void)addPointWithIdentifier:(NSString *)identifier pointValue:(NSInteger)pointValue pointObject:(id)pointObject {
