@@ -51,6 +51,8 @@
 		6332094B1B293D4300258278 /* OCDDashboardPointPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332093F1B29375500258278 /* OCDDashboardPointPresenter.m */; };
 		6332094C1B293D4300258278 /* OCDDashboardPointInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209421B29376200258278 /* OCDDashboardPointInteractor.m */; };
 		6332094D1B293D4300258278 /* OCDDashboardPointItemInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209451B29376F00258278 /* OCDDashboardPointItemInteractor.m */; };
+		633209501B29454200258278 /* OCDDashboardInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332094F1B29454200258278 /* OCDDashboardInformationViewController.m */; };
+		633209511B2946CD00258278 /* OCDDashboardInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332094F1B29454200258278 /* OCDDashboardInformationViewController.m */; };
 		636CF0641B26E85A0078D48E /* OCDDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0631B26E85A0078D48E /* OCDDeviceService.m */; };
 		636CF0651B26E8630078D48E /* OCDDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0631B26E85A0078D48E /* OCDDeviceService.m */; };
 		63C203831B25833400D027CC /* OCDebugger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C203821B25833400D027CC /* OCDebugger.h */; };
@@ -154,6 +156,8 @@
 		633209451B29376F00258278 /* OCDDashboardPointItemInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDashboardPointItemInteractor.m; sourceTree = "<group>"; };
 		633209471B293AE500258278 /* OCDDashboardPointTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDashboardPointTableViewCell.h; sourceTree = "<group>"; };
 		633209481B293AE500258278 /* OCDDashboardPointTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDashboardPointTableViewCell.m; sourceTree = "<group>"; };
+		6332094E1B29454200258278 /* OCDDashboardInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDashboardInformationViewController.h; sourceTree = "<group>"; };
+		6332094F1B29454200258278 /* OCDDashboardInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDashboardInformationViewController.m; sourceTree = "<group>"; };
 		636CF0621B26E85A0078D48E /* OCDDeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDeviceService.h; sourceTree = "<group>"; };
 		636CF0631B26E85A0078D48E /* OCDDeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDeviceService.m; sourceTree = "<group>"; };
 		63C2037F1B25833400D027CC /* libOCDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -485,6 +489,8 @@
 				6332093B1B29349800258278 /* OCDDashboardPointViewController.m */,
 				633209471B293AE500258278 /* OCDDashboardPointTableViewCell.h */,
 				633209481B293AE500258278 /* OCDDashboardPointTableViewCell.m */,
+				6332094E1B29454200258278 /* OCDDashboardInformationViewController.h */,
+				6332094F1B29454200258278 /* OCDDashboardInformationViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -863,6 +869,7 @@
 				6332090A1B281FFA00258278 /* OCDPointCore.m in Sources */,
 				6332093C1B29349800258278 /* OCDDashboardPointViewController.m in Sources */,
 				63152A331B259C2F0072F9F4 /* OCDHTTPWatcherCore.m in Sources */,
+				633209501B29454200258278 /* OCDDashboardInformationViewController.m in Sources */,
 				633209221B29297700258278 /* OCDDashboardCore.m in Sources */,
 				63152A4D1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m in Sources */,
 				63152A651B2687B80072F9F4 /* OCDConnService.m in Sources */,
@@ -901,6 +908,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633209511B2946CD00258278 /* OCDDashboardInformationViewController.m in Sources */,
 				6332094A1B293D4300258278 /* OCDDashboardPointTableViewCell.m in Sources */,
 				6332094B1B293D4300258278 /* OCDDashboardPointPresenter.m in Sources */,
 				6332094C1B293D4300258278 /* OCDDashboardPointInteractor.m in Sources */,

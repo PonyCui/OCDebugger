@@ -7,6 +7,7 @@
 //
 
 #import "OCDDashboardWireframe.h"
+#import "OCDDashboardInformationViewController.h"
 #import "OCDDashboardPointViewController.h"
 #import <UIKit/UIKit.h>
 
@@ -27,6 +28,13 @@
     [self.alertView show];
 }
 
+- (void)presentInformationViewController {
+    OCDDashboardInformationViewController *viewController = [[OCDDashboardInformationViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [[[[[UIApplication sharedApplication] delegate] window] rootViewController]
+     presentViewController:navigationController animated:YES completion:nil];
+}
+
 - (void)presentPointViewController {
     OCDDashboardPointViewController *viewController = [[OCDDashboardPointViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
@@ -38,6 +46,9 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([buttonTitle isEqualToString:@"Device Information"]) {
+        [self presentInformationViewController];
+    }
     if ([buttonTitle isEqualToString:@"Debug Point"]) {
         [self presentPointViewController];
     }
