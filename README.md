@@ -29,6 +29,30 @@ OCDebugger will handle less 32K response data, and send to server, web applicati
 ### Remote and Local Logging
 OCDebugger makes logging much easier than you thing. You ```#import "OCDebugger.h"``` into prefix header file. That's enough. All NSLog() message will send to server and save in local.
 And we eager to do more, we want to debug like ```lldb```, and we will finish it next version.
+
 _**All logging is realtime transferring.**_
+
 ![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/4.png)
 ![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/5.png)
+
+### Debug Point
+OCDebugger invent a way to debug faster, the Debug Point! We call it Point.
+If you want to replace a variable while running an app, how can you do with that? Maybe you will setup an remote server, set a JSON mapping file? Maybe you will use local code to perform it?
+Here is an example.
+```
+- (BOOL)testPoint {
+    OCDValuePoint(@"test", YES);
+    return NO;
+}
+
+- (NSString *)testText {
+    OCDObjectPoint(@"How", @"How?");
+    return @"What?";
+}
+```
+We add point into ```testPoint``` and ```testText``` method, and then, if we make Point valid, it will return the assigning value or object.
+The difference of ```OCDValuePoint``` and ```OCDObjectPoint``` is, ```OCDValuePoint``` returns bool/int value, ```OCDObjectPoint``` returns NSObject.
+
+We use local or remote control make Point valid or invalid.
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/6.png)
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/7.png)
