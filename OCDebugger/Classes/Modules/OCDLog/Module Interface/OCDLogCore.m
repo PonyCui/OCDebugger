@@ -18,7 +18,9 @@ void OCDLog(const char * file, int lineNumber, const char *functionName, NSStrin
     }
     NSString *body = [[NSString alloc] initWithFormat:format arguments:ap];
     va_end (ap);
-    NSString *dateString = [[NSDate date] description];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"HH:mm:ss";
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
     fprintf(stderr, "[OCDLog] %s %s", [dateString UTF8String], [body UTF8String]);
     OCDLogEntity *item = [[OCDLogEntity alloc] init];
     item.logFileName = [[NSString stringWithUTF8String:file] lastPathComponent];
