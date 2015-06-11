@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "OCDebugger.h"
+#import "OCDLogCore.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [OCDebugger setEnabled:YES];
+    NSLog(@"123");
     // Override point for customization after application launch.
     return YES;
 }

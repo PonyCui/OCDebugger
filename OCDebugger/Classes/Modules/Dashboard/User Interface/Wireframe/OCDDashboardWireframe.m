@@ -9,6 +9,7 @@
 #import "OCDDashboardWireframe.h"
 #import "OCDDashboardInformationViewController.h"
 #import "OCDDashboardPointViewController.h"
+#import "OCDDashboardLogViewController.h"
 #import <UIKit/UIKit.h>
 
 @interface OCDDashboardWireframe ()<UIAlertViewDelegate>
@@ -42,6 +43,13 @@
      presentViewController:navigationController animated:YES completion:nil];
 }
 
+- (void)presentLogViewController {
+    OCDDashboardLogViewController *viewController = [[OCDDashboardLogViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [[[[[UIApplication sharedApplication] delegate] window] rootViewController]
+     presentViewController:navigationController animated:YES completion:nil];
+}
+
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
@@ -49,8 +57,11 @@
     if ([buttonTitle isEqualToString:@"Device Information"]) {
         [self presentInformationViewController];
     }
-    if ([buttonTitle isEqualToString:@"Debug Point"]) {
+    else if ([buttonTitle isEqualToString:@"Debug Point"]) {
         [self presentPointViewController];
+    }
+    else if ([buttonTitle isEqualToString:@"Log"]) {
+        [self presentLogViewController];
     }
 }
 

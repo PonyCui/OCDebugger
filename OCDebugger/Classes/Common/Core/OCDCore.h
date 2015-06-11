@@ -11,6 +11,7 @@
 #import "OCDSocketServiceManager.h"
 #import "OCDPointCore.h"
 #import "OCDDashboardCore.h"
+#import "OCDLogCore.h"
 
 @interface OCDCore : NSObject
 
@@ -21,6 +22,8 @@
 @property (nonatomic, strong) OCDPointCore *point;
 
 @property (nonatomic, strong) OCDDashboardCore *dashboard;
+
+@property (nonatomic, strong) OCDLogCore *log;
 
 @property (nonatomic, strong) OCDSocketServiceManager *socketService;
 

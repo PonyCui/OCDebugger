@@ -40,6 +40,13 @@
     return _dashboard;
 }
 
+- (OCDLogCore *)log {
+    if (_log == nil) {
+        _log = [[OCDLogCore alloc] init];
+    }
+    return _log;
+}
+
 - (OCDSocketServiceManager *)socketService {
     if (_socketService == nil) {
         _socketService = [[OCDSocketServiceManager alloc] init];
