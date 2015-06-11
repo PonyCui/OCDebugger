@@ -7,12 +7,28 @@ OCDebugger is licensed under MIT.
 
 ## Features
 
+### Remote and Local Dashboard
+
+To read debug data, you can shake your mobile phone any time, or use PC/Mac open web application (http://xxxx.com)
+
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/0.png)
+
 ### HTTP Watcher (Network Traffic Debugging)
 OCDebugger use NSURLProtocol sniff all network connections. All you need to do is, open web application, wait for the connection information comes.
 
-xxx
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/1.png)
 
 OCDebugger use Foundation Framework sniff network traffic. This means that all http/https is debuggable.
 And, all trading network library can be sniffer by OCDebugger including ```AFNetworking```/```SDWebImage``` etc. But, if network library use ```CFNetwork``` C++ function, OCDebugger HTTP Watcher will have no effects.
 
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/2.png)
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/3.png)
+
 OCDebugger will handle less 32K response data, and send to server, web application will try to convert JSON into pretty style. The request header and response header are also handled.
+
+### Remote and Local Logging
+OCDebugger makes logging much easier than you thing. You ```#import "OCDebugger.h"``` into prefix header file. That's enough. All NSLog() message will send to server and save in local.
+And we eager to do more, we want to debug like ```lldb```, and we will finish it next version.
+_**All logging is realtime transferring.**_
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/4.png)
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/5.png)
