@@ -12,12 +12,15 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
     [self test];
     [NSTimer scheduledTimerWithTimeInterval:15.0
                                      target:self
