@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "OCDebugger.h"
+#import "OCDLogCore.h"
 
 @interface ViewController ()
 

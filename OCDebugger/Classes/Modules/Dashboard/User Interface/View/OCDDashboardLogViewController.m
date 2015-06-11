@@ -14,6 +14,8 @@
 @property (nonatomic, strong) UIBarButtonItem *closeButtonItem;
 @property (nonatomic, strong) UITextView *textView;
 
+@property (nonatomic, strong) NSTimer *refreshTimer;
+
 @end
 
 @implementation OCDDashboardLogViewController
@@ -25,6 +27,16 @@
     [self.view addSubview:self.textView];
     self.textView.text = [[[[OCDCore sharedCore] log] manager] consoleText];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(handleRefreshTimerTrigger) userInfo:nil repeats:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.refreshTimer invalidate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +52,10 @@
 
 - (void)handleCloseButtonTapped {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)handleRefreshTimerTrigger {
+    self.textView.text = [[[[OCDCore sharedCore] log] manager] consoleText];
 }
 
 #pragma mark - Getter
