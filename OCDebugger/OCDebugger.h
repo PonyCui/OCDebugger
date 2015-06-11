@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef DEBUG
+#define NSLog(args...) OCDLog(__FILE__,__LINE__,__PRETTY_FUNCTION__,args);
+#else
+#define NSLog(...) {}
+#endif
+
 @interface OCDebugger : NSObject
 
 + (void)setEnabled:(BOOL)enabled;

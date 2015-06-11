@@ -10,12 +10,6 @@
 #import "OCDLogEntity.h"
 #import "OCDLogManager.h"
 
-#ifdef DEBUG
-#define NSLog(args...) OCDLog(__FILE__,__LINE__,__PRETTY_FUNCTION__,args);
-#else
-#define NSLog(...) {}
-#endif
-
 void OCDLog(const char * file, int lineNumber, const char *functionName, NSString *format, ...);
 
 @interface OCDLogCore : NSObject
