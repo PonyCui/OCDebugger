@@ -11,8 +11,6 @@
 #import <Aspects/Aspects.h>
 #import <UIKit/UIKit.h>
 
-static NSDate *startDate;
-
 @interface OCDDashboardShakeHooker ()
 
 @end
@@ -26,12 +24,6 @@ static NSDate *startDate;
                                    UIViewController *viewController = [info instance];
                                    [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
                                    [viewController becomeFirstResponder];
-                               }
-                                    error:NULL];
-    [UIResponder aspect_hookSelector:@selector(motionBegan:withEvent:)
-                              withOptions:AspectPositionAfter
-                               usingBlock:^(){
-                                   startDate = [NSDate date];
                                }
                                     error:NULL];
     [UIResponder aspect_hookSelector:@selector(motionEnded:withEvent:)
