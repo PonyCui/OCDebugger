@@ -1,7 +1,7 @@
 # OCDebugger
 OCDebugger is an easy to use debugging toolset. You use OCDebugger debug your application on Web or iPhone. It's a client library and we provide an web application (OCDServer) holding all connection from iOS. Also, we provide a public web application here xxx, please feel free to use it, it's really stable.
 
-Unlink **PonyDebugger**, OCDebugger don't requires open Chrome Developer Tools, you may debug your application using Safari, Chrome, Firefox, or even IE10+ .
+Unlike **PonyDebugger**, OCDebugger don't requires open Chrome Developer Tools, you may debug your application using Safari, Chrome, Firefox, or even IE10+ .
 
 OCDebugger is licensed under MIT.
 
@@ -56,3 +56,66 @@ The difference of ```OCDValuePoint``` and ```OCDObjectPoint``` is, ```OCDValuePo
 We use local or remote control make Point valid or invalid.
 ![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/6.png)
 ![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/7.png)
+
+### More
+We eager to develop more function to every developer. Please star OCDebugger, keep eyes with me. Thanks.
+
+##Installation
+
+###Technical
+* Requeires iOS 6.0 or above (but I didn't test under iOS6)
+* Xcode 6.3
+
+###Installing
+####CocoaPods
+[CocoaPods](http://cocoapods.org/) automates 3rd party dependencies in
+Objective-C.
+
+Install the ruby gem.
+
+    $ sudo gem install cocoapods
+    $ pod setup
+
+> Depending on your Ruby installation, you may not have to run as sudo to
+> install the cocoapods gem.
+
+Create a Podfile. You must be running on iOS 6 or above.
+
+    platform :ios, '6.0'
+    pod 'OCDebugger'
+
+If you would like to use the latest version of PonyDebugger, point to the Github
+repository directly.
+
+    pod 'OCDebugger', :git => 'https://github.com/PonyCui/OCDebugger.git'
+
+Install dependencies.
+
+    $ pod install
+
+When using CocoaPods, you must open the `.xcworkspace` file instead of the
+project file when building your project.
+
+####Manual
+No recommend use manual installing.
+
+##Usage
+
+Copy ```OCDPrefixHeader.h``` to your project manually, it should not depend of Pods directory.
+
+import ```OCDebugger.h``` and ```OCDPrefixHeader.h``` to your project prefix header file.
+
+Go to web application http://xxxx.com , request an appid.
+
+Type following code in any where you want.(Recommend applicaton:didFinishLaunchingWithOptions:)
+```
+[OCDebugger setAppID:@"yourappid" appToken:@"yourapptoken"];
+[OCDebugger setEnabled:YES];
+```
+
+Enjoy now.
+
+## Caution
+
+Before you release your application, you must remove ```OCDebugger```, and ```pod update```.
+OCDebugger is not a production environment library.
