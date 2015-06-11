@@ -178,6 +178,7 @@
 		633209621B29600500258278 /* OCDDashboardLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDashboardLogViewController.m; sourceTree = "<group>"; };
 		633209671B29655600258278 /* OCDLogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDLogService.h; sourceTree = "<group>"; };
 		633209681B29655600258278 /* OCDLogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDLogService.m; sourceTree = "<group>"; };
+		6332096B1B29750300258278 /* OCDPrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCDPrefixHeader.h; sourceTree = "<group>"; };
 		636CF0621B26E85A0078D48E /* OCDDeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDeviceService.h; sourceTree = "<group>"; };
 		636CF0631B26E85A0078D48E /* OCDDeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDeviceService.m; sourceTree = "<group>"; };
 		63C2037F1B25833400D027CC /* libOCDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -624,6 +625,7 @@
 				63152A231B2598F40072F9F4 /* Classes */,
 				63C203821B25833400D027CC /* OCDebugger.h */,
 				63C203841B25833400D027CC /* OCDebugger.m */,
+				6332096B1B29750300258278 /* OCDPrefixHeader.h */,
 			);
 			path = OCDebugger;
 			sourceTree = "<group>";

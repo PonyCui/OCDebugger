@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "OCDebugger.h"
-#import "OCDLogCore.h"
+#import "OCDPrefixHeader.h"
 
 @interface AppDelegate ()
 
