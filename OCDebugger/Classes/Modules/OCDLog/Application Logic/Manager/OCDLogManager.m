@@ -8,6 +8,7 @@
 
 #import "OCDLogManager.h"
 #import "OCDLogEntity.h"
+#import "OCDCore.h"
 
 @interface OCDLogManager ()
 
@@ -24,6 +25,7 @@
     NSMutableArray *items = [self.items mutableCopy];
     [items addObject:item];
     self.items = items;
+    [[[[OCDCore sharedCore] socketService] log] sendLogItem:item];
 }
 
 - (NSString *)consoleText {

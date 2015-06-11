@@ -7,7 +7,19 @@
 //
 
 #import "OCDLogEntity.h"
+#import "OCDValueFormatter.h"
+#import <UIKit/UIKit.h>
 
 @implementation OCDLogEntity
+
+- (NSDictionary *)toDictionary {
+    return @{
+             @"deviceIdentifier": TOString([[[UIDevice currentDevice] identifierForVendor] UUIDString]),
+             @"logFileName": TOString(self.logFileName),
+             @"logFunctionName": TOString(self.logFunctionName),
+             @"logLineNumber": TOString(self.logLineNumber),
+             @"logBody": TOString(self.logBody)
+             };
+}
 
 @end

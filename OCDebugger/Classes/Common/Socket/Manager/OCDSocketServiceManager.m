@@ -7,11 +7,6 @@
 //
 
 #import "OCDSocketServiceManager.h"
-#import "OCDConnService.h"
-#import "OCDSubService.h"
-#import "OCDPubService.h"
-#import "OCDDeviceService.h"
-#import "OCDPointService.h"
 
 @implementation OCDSocketServiceManager
 
@@ -24,6 +19,7 @@
         _pub = [[OCDPubService alloc] init];
         _device = [[OCDDeviceService alloc] init];
         _point = [[OCDPointService alloc] init];
+        _log = [[OCDLogService alloc] init];
     }
     return self;
 }
