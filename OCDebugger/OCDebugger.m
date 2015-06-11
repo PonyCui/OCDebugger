@@ -14,6 +14,11 @@ static BOOL isEnabled;
 
 @implementation OCDebugger
 
++ (void)setAppID:(NSString *)appID appToken:(NSString *)appToken {
+    [[OCDDefine sharedDefine] setAppID:appID];
+    [[OCDDefine sharedDefine] setAppToken:appToken];
+}
+
 + (void)setEnabled:(BOOL)enabled {
     isEnabled = enabled;
     if (enabled) {

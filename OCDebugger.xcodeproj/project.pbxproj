@@ -455,17 +455,9 @@
 			isa = PBXGroup;
 			children = (
 				633209281B292A6800258278 /* Hooker */,
-				6332091D1B29296100258278 /* Entity */,
 				6332091E1B29296100258278 /* Manager */,
 			);
 			path = "Application Logic";
-			sourceTree = "<group>";
-		};
-		6332091D1B29296100258278 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		6332091E1B29296100258278 /* Manager */ = {

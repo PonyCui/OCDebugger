@@ -11,6 +11,7 @@
 #import "OCDProtocolHelper.h"
 #import "OCDValueFormatter.h"
 #import "OCDCore.h"
+#import "OCDDefine.h"
 
 @interface OCDSubService ()
 
@@ -23,8 +24,8 @@
 @implementation OCDSubService
 
 - (void)addObserver {
-    NSString *userID = @"1";
-    NSString *sessionToken = @"testToken";
+    NSString *userID = TOString([[OCDDefine sharedDefine] appID]);
+    NSString *sessionToken = TOString([[OCDDefine sharedDefine] appToken]);
     NSString *message = [OCDProtocolHelper messageWithService:@"sub"
                                                        method:@"addObserver"
                                                        params:@{@"user_id":userID,

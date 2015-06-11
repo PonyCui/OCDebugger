@@ -18,6 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [OCDebugger setAppID:@"1" appToken:@"testToken"];
     [OCDebugger setEnabled:YES];
     NSLog(@"123");
     // Override point for customization after application launch.

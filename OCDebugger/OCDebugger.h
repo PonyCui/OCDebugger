@@ -21,6 +21,8 @@
 
 @interface OCDebugger : NSObject
 
++ (void)setAppID:(NSString *)appID appToken:(NSString *)appToken;
+
 + (void)setEnabled:(BOOL)enabled;
 
 + (void)addPointWithIdentifier:(NSString *)identifier pointValue:(NSInteger)pointValue pointObject:(id)pointObject;
