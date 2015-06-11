@@ -8,6 +8,13 @@
 
 #import "OCDDashboardPointItemInteractor.h"
 #import "OCDPointEntity.h"
+#import "OCDCore.h"
+
+@interface OCDDashboardPointItemInteractor ()
+
+@property (nonatomic, strong) OCDPointEntity *item;
+
+@end
 
 @implementation OCDDashboardPointItemInteractor
 
@@ -15,16 +22,22 @@
 {
     self = [super init];
     if (self) {
-        self.title = item.pointIdentifier;
+        _item = item;
+        _title = item.pointIdentifier;
         if (item.pointObject != nil) {
-            self.subTitle = [NSString stringWithFormat:@"Object:%@", [item.pointObject description]];
+            _subTitle = [NSString stringWithFormat:@"Object:%@", [item.pointObject description]];
         }
         else {
-            self.subTitle = [NSString stringWithFormat:@"Value:%ld", (long)item.pointValue];
+            _subTitle = [NSString stringWithFormat:@"Value:%ld", (long)item.pointValue];
         }
-        self.isOn = item.isValid;
+        _isOn = item.isValid;
     }
     return self;
+}
+
+- (void)setIsOn:(BOOL)isOn {
+    _isOn = isOn;
+    [[[[[OCDCore sharedCore] point] manager] pointWithIdentifier:self.item.pointIdentifier] setIsValid:_isOn];
 }
 
 @end

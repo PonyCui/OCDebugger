@@ -10,7 +10,15 @@
 
 @class OCDDashboardPointItemInteractor;
 
+@protocol OCDDashboardPointTableViewCellDelegate <NSObject>
+
+- (void)switchPointValid:(UITableViewCell *)cell isValid:(BOOL)isValid;
+
+@end
+
 @interface OCDDashboardPointTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<OCDDashboardPointTableViewCellDelegate> delegate;
 
 - (void)updateWithItemInteractor:(OCDDashboardPointItemInteractor *)itemInteractor;
 

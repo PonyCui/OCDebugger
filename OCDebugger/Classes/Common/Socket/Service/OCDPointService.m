@@ -31,13 +31,11 @@
 - (void)validPoint:(NSDictionary *)params {
     NSString *pointIdentifier = TOString(params[@"id"]);
     [[[[[OCDCore sharedCore] point] manager] pointWithIdentifier:pointIdentifier] setIsValid:YES];
-    [self requestPoints];
 }
 
 - (void)invalidPoint:(NSDictionary *)params {
     NSString *pointIdentifier = TOString(params[@"id"]);
     [[[[[OCDCore sharedCore] point] manager] pointWithIdentifier:pointIdentifier] setIsValid:NO];
-    [self requestPoints];
 }
 
 @end

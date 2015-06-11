@@ -41,6 +41,10 @@
     [self.switcher setOn:itemInteractor.isOn];
 }
 
+- (void)handleSwitcherValueChanged {
+    [self.delegate switchPointValid:self isValid:self.switcher.isOn];
+}
+
 #pragma mark - Getter
 
 - (UISwitch *)switcher {
@@ -48,6 +52,7 @@
         _switcher = [[UISwitch alloc] init];
         _switcher.center = CGPointMake(self.frame.size.width - _switcher.frame.size.width / 2.0 - 8.0,
                                        self.frame.size.height / 2.0);
+        [_switcher addTarget:self action:@selector(handleSwitcherValueChanged) forControlEvents:UIControlEventValueChanged];
     }
     return _switcher;
 }

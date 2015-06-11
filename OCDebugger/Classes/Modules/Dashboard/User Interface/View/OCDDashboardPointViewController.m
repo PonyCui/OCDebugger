@@ -11,7 +11,7 @@
 #import "OCDDashboardPointInteractor.h"
 #import "OCDDashboardPointTableViewCell.h"
 
-@interface OCDDashboardPointViewController ()
+@interface OCDDashboardPointViewController ()<OCDDashboardPointTableViewCellDelegate>
 
 @property (nonatomic, strong) OCDDashboardPointPresenter *eventHandler;
 
@@ -78,14 +78,25 @@
     
     if (cell == nil) {
         cell = [[OCDDashboardPointTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+        cell.delegate = self;
     }
     
     if (indexPath.row < [self.eventHandler.pointInteractor.items count]) {
+        cell.tag = indexPath.row;
         OCDDashboardPointItemInteractor *itemInteractor = self.eventHandler.pointInteractor.items[indexPath.row];
         [cell updateWithItemInteractor:itemInteractor];
     }
 
     return cell;
+}
+
+#pragma mark - OCDDashboardPointTableViewCellDelegate
+
+- (void)switchPointValid:(UITableViewCell *)cell isValid:(BOOL)isValid {
+    if (cell.tag < [self.eventHandler.pointInteractor.items count]) {
+        OCDDashboardPointItemInteractor *itemInteractor = self.eventHandler.pointInteractor.items[cell.tag];
+        [itemInteractor setIsOn:isValid];
+    }
 }
 
 #pragma mark - Getter

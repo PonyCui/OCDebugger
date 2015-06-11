@@ -8,6 +8,7 @@
 
 #import "OCDPointEntity.h"
 #import "OCDValueFormatter.h"
+#import "OCDCore.h"
 
 @implementation OCDPointEntity
 
@@ -30,6 +31,7 @@
     _isValid = isValid;
     [[NSUserDefaults standardUserDefaults] setObject:@(_isValid) forKey:[self cacheKey]];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [[[[OCDCore sharedCore] socketService] point] requestPoints];
 }
 
 - (void)setPointIdentifier:(NSString *)pointIdentifier {

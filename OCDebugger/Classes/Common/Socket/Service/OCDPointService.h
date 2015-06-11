@@ -10,4 +10,6 @@
 
 @interface OCDPointService : NSObject
 
+- (void)requestPoints;
+
 @end
