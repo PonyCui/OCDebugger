@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OCDLogCore.h"
 
 #ifdef DEBUG
 #define NSLog(args...) OCDLog(__FILE__,__LINE__,__PRETTY_FUNCTION__,args);
 #else
 #define NSLog(...) {}
 #endif
+
+#define OCDValuePoint(ID, VALUE) [OCDebugger addPointWithIdentifier:ID pointValue:VALUE pointObject:nil];if([OCDebugger isPointValid:ID]) {return [OCDebugger pointValue:ID];}
+
+#define OCDObjectPoint(ID, OBJECT) [OCDebugger addPointWithIdentifier:ID pointValue:0 pointObject:OBJECT];if([OCDebugger isPointValid:ID]) {return [OCDebugger pointObject:ID];}
 
 @interface OCDebugger : NSObject
 

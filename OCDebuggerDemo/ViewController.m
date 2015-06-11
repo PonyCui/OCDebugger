@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "OCDebugger.h"
-#import "OCDLogCore.h"
 
 @interface ViewController ()
 
@@ -35,14 +34,17 @@
         
     }];
     NSLog(@"testPoint Bool = %d", [self testPoint]);
+    NSLog(@"testText text = %@", [self testText]);
 }
 
 - (BOOL)testPoint {
-    [OCDebugger addPointWithIdentifier:@"test" pointValue:YES pointObject:nil];
-    if ([OCDebugger isPointValid:@"test"]) {
-        return [OCDebugger pointValue:@"test"];
-    }
+    OCDValuePoint(@"test", YES);
     return NO;
+}
+
+- (NSString *)testText {
+    OCDObjectPoint(@"How", @"How?");
+    return @"What?";
 }
 
 - (void)didReceiveMemoryWarning {
