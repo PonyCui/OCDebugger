@@ -24,6 +24,9 @@
     else if ([shell hasPrefix:@"cd"]) {
         [baseString appendString:[self cd:shell]];
     }
+    else if ([shell hasPrefix:@"rm"]) {
+        [baseString appendString:[self rm:shell]];
+    }
     else {
         [baseString appendString:@"command not found."];
     }
@@ -49,7 +52,8 @@
     [files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *filePath = [[self absolutelyPathWithPath:self.currentPath] stringByAppendingFormat:@"/%@", obj];
         NSDictionary *fileAttrs = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:NULL];
-        [resultString appendFormat:@"%04ld       %@      %@\n", (long)[fileAttrs[NSFileSize] integerValue], fileAttrs[NSFileType], obj];
+        [resultString appendFormat:@"%04ld      %@       %@      %@\n",
+         (long)[fileAttrs[NSFileSize] integerValue], [fileAttrs[NSFileModificationDate] description], fileAttrs[NSFileType], obj];
     }];
     return [resultString copy];
 }
@@ -60,7 +64,8 @@
     [files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *filePath = [[self absolutelyPathWithPath:self.currentPath] stringByAppendingFormat:@"/%@", obj];
         NSDictionary *fileAttrs = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:NULL];
-        [resultString appendFormat:@"%04ld       %@      %@\n", (long)[fileAttrs[NSFileSize] integerValue], fileAttrs[NSFileType], obj];
+        [resultString appendFormat:@"%04ld      %@       %@      %@\n",
+         (long)[fileAttrs[NSFileSize] integerValue], [fileAttrs[NSFileModificationDate] description], fileAttrs[NSFileType], obj];
     }];
     return [resultString copy];
 }
@@ -68,7 +73,7 @@
 #pragma mark - cd
 
 - (NSString *)cd:(NSString *)shell {
-    if ([shell isEqualToString:@"cd.."]) {
+    if ([shell isEqualToString:@"cd.."] || [shell isEqualToString:@"cd .."]) {
         NSMutableArray *components = [[self.currentPath componentsSeparatedByString:@"/"] mutableCopy];
         if ([components count] > 0) {
             [components removeLastObject];
@@ -92,6 +97,24 @@
         }
     }
     return [NSString stringWithFormat:@"Current Path = %@", self.currentPath];
+}
+
+#pragma mark - rm
+
+- (NSString *)rm:(NSString *)shell {
+    if ([shell hasPrefix:@"rm "]) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[self absolutelyPathWithPath:[shell substringFromIndex:3]]]) {
+            NSError *rmError;
+            [[NSFileManager defaultManager] removeItemAtPath:[self absolutelyPathWithPath:[shell substringFromIndex:3]] error:&rmError];
+            if (rmError == nil) {
+                return @"Deleted";
+            }
+            else {
+                return rmError.localizedDescription;
+            }
+        }
+    }
+    return @"Nothing changed.";
 }
 
 #pragma mark - Path Helper
