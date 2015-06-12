@@ -38,4 +38,12 @@
     }
 }
 
+- (void)saveViContent:(NSDictionary *)params {
+    if ([TOString(params[@"deviceIdentifier"]) isEqualToString:[[[UIDevice currentDevice] identifierForVendor] UUIDString]]) {
+        NSString *filePath = TOString(params[@"filePath"]);
+        NSString *fileContent = TOString(params[@"fileContent"]);
+        [fileContent writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:NULL];
+    }
+}
+
 @end

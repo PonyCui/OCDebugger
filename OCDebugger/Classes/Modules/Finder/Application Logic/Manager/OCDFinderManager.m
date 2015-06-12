@@ -7,6 +7,9 @@
 //
 
 #import "OCDFinderManager.h"
+#import "OCDCore.h"
+#import "OCDValueFormatter.h"
+#import <UIKit/UIKit.h>
 
 @implementation OCDFinderManager
 
@@ -26,6 +29,9 @@
     }
     else if ([shell hasPrefix:@"rm"]) {
         [baseString appendString:[self rm:shell]];
+    }
+    else if ([shell hasPrefix:@"vi"]) {
+        [baseString appendString:[self vi:shell]];
     }
     else {
         [baseString appendString:@"command not found."];
@@ -131,6 +137,29 @@
         }
     }
     return @"Nothing changed.";
+}
+
+#pragma mark - vi
+
+- (NSString *)vi:(NSString *)shell {
+    if ([shell hasPrefix:@"vi "]) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[self absolutelyPathWithPath:[shell substringFromIndex:3]]]) {
+            NSString *fileContent = [NSString stringWithContentsOfFile:[self absolutelyPathWithPath:[shell substringFromIndex:3]] encoding:NSUTF8StringEncoding error:NULL];
+            if (fileContent == nil || [fileContent length] > 1024 * 32 || ![fileContent isKindOfClass:[NSString class]]) {
+                return @"Not a text file or file size large than 32KB.";
+            }
+            [[[[OCDCore sharedCore] socketService] pub]
+             pubMessageToService:@"finder"
+             method:@"viMode"
+             params:@{
+                      @"deviceIdentifier": TOString([[[UIDevice currentDevice] identifierForVendor] UUIDString]),
+                      @"filePath": TOString([self absolutelyPathWithPath:[shell substringFromIndex:3]]),
+                      @"fileContent": TOString(fileContent)
+                      }];
+            return @"";
+        }
+    }
+    return @"File not exist.";
 }
 
 #pragma mark - Path Helper
