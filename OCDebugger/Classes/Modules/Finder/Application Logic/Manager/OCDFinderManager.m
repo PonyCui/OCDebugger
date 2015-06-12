@@ -102,7 +102,23 @@
 #pragma mark - rm
 
 - (NSString *)rm:(NSString *)shell {
-    if ([shell hasPrefix:@"rm "]) {
+    if ([shell isEqualToString:@"rm *"]) {
+        NSMutableString *result = [NSMutableString string];
+        NSArray *subPaths = [self currentSubPaths];
+        [subPaths enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSError *rmError;
+            [[NSFileManager defaultManager] removeItemAtPath:[self absolutelyPathWithPath:obj]
+                                                       error:&rmError];
+            if (rmError == nil) {
+                [result appendFormat:@"%@ Deleted\n", obj];
+            }
+            else {
+                [result appendFormat:@"%@ Delete failed, reason:%@\n", obj, rmError.localizedDescription];
+            }
+        }];
+        return [result copy];
+    }
+    else if ([shell hasPrefix:@"rm "]) {
         if ([[NSFileManager defaultManager] fileExistsAtPath:[self absolutelyPathWithPath:[shell substringFromIndex:3]]]) {
             NSError *rmError;
             [[NSFileManager defaultManager] removeItemAtPath:[self absolutelyPathWithPath:[shell substringFromIndex:3]] error:&rmError];
