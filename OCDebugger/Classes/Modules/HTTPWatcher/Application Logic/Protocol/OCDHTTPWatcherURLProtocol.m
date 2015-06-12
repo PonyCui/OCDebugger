@@ -20,6 +20,8 @@ static int watchOrderID = 0;
 
 @property (nonatomic, strong) NSMutableData *data;
 
+@property (nonatomic, strong) NSDate *startDate;
+
 @end
 
 @implementation OCDHTTPWatcherURLProtocol
@@ -45,6 +47,7 @@ static int watchOrderID = 0;
 }
 
 - (void)startLoading {
+    self.startDate = [NSDate date];
     OCDHTTPWatcherConnectionEntity *connectionItem = [[OCDHTTPWatcherConnectionEntity alloc]
                                                       initWithReqeust:self.request];
     connectionItem.orderID = [NSURLProtocol propertyForKey:@"OCDHTTPWatcher" inRequest:self.request];
@@ -84,7 +87,7 @@ didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 - (void)connection:(NSURLConnection *)connection
 didReceiveResponse:(NSURLResponse *)response
 {
-    [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:[[self request] cachePolicy]];
+    [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageAllowed];
     self.response = response;
 }
 
@@ -107,6 +110,7 @@ didReceiveResponse:(NSURLResponse *)response
                                                       initWithResponse:self.response
                                                       data:[self.data copy]];
     connectionItem.orderID = [NSURLProtocol propertyForKey:@"OCDHTTPWatcher" inRequest:self.request];
+    connectionItem.timeUse = [NSString stringWithFormat:@"%.2fs", fabs([self.startDate timeIntervalSinceNow])];
     [[[[OCDCore sharedCore] HTTPWatcher] connectionManager] deliverItem:connectionItem];
 }
 

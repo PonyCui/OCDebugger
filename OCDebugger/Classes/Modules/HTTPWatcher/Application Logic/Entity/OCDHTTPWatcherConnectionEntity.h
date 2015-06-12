@@ -30,6 +30,10 @@
 
 @property (nonatomic, copy) NSString *responseString;
 
+@property (nonatomic, copy) NSString *responseDataSize;
+
+@property (nonatomic, copy) NSString *timeUse;
+
 - (instancetype)initWithReqeust:(NSURLRequest *)request;
 
 - (instancetype)initWithResponse:(NSURLResponse *)response data:(NSData *)data;

@@ -43,7 +43,9 @@
                     self.responseString = dataString;
                 }
             }
+            self.responseDataSize = [NSString stringWithFormat:@"%.2fKB", [data length] / 1024.0];
         }
+        
     }
     return self;
 }
@@ -61,7 +63,9 @@
              @"responseMIMEType": TOString(self.responseMIMEType),
              @"responseStatusCode": TOString(self.responseStatusCode),
              @"responseHeader": TOString(self.responseHeader),
-             @"responseString": TOString(self.responseString)
+             @"responseString": TOString(self.responseString),
+             @"responseDataSize": TOString(self.responseDataSize),
+             @"timeUse": TOString(self.timeUse)
              };
 }
 
