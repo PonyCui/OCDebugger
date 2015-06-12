@@ -26,4 +26,16 @@
     }
 }
 
+- (void)requireSubPaths:(NSDictionary *)params {
+    if ([TOString(params[@"deviceIdentifier"]) isEqualToString:[[[UIDevice currentDevice] identifierForVendor] UUIDString]]) {
+        [[[[OCDCore sharedCore] socketService] pub]
+         pubMessageToService:@"finder"
+         method:@"updateSubPaths"
+         params:@{
+                  @"deviceIdentifier": TOString([[[UIDevice currentDevice] identifierForVendor] UUIDString]),
+                  @"subPaths": TOArray([[[[OCDCore sharedCore] finder] manager] currentSubPaths])
+                  }];
+    }
+}
+
 @end

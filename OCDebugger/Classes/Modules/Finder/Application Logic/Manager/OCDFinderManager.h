@@ -12,6 +12,8 @@
 
 @property (nonatomic, copy) NSString *currentPath;
 
+- (NSArray *)currentSubPaths;
+
 - (NSString *)executeShell:(NSString *)shell;
 
 @end
