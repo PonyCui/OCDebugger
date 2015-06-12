@@ -19,7 +19,7 @@
         self.requestURLString = request.URL.absoluteString;
         self.requestDate = [NSDate date];
         self.requestMethod = [request HTTPMethod];
-        self.requestHeader = [[request allHTTPHeaderFields] description];
+        self.requestHeader = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:TODictionary([request allHTTPHeaderFields]) options:kNilOptions error:NULL] encoding:NSUTF8StringEncoding];
         if ([request.HTTPBody length] > 1024 * 32) {
             self.requestBody = @"Bigger than 32K, will discard transfer to server.";
         }
@@ -38,7 +38,7 @@
         if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
             NSHTTPURLResponse *theResponse = (id)response;
             self.responseStatusCode = [NSString stringWithFormat:@"%ld", (long)theResponse.statusCode];
-            self.responseHeader = [[theResponse allHeaderFields] description];
+            self.responseHeader = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:TODictionary([theResponse allHeaderFields]) options:kNilOptions error:NULL] encoding:NSUTF8StringEncoding];
             if ([data length] > 1024 * 32) {
                 //Bigger than 32K, will discard transfer to server.
                 self.responseString = @"Bigger than 32K, will discard transfer to server.";
