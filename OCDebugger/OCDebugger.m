@@ -33,6 +33,7 @@ static BOOL isEnabled;
         [[[OCDCore sharedCore] dashboard] uninstall];
         [[[OCDCore sharedCore] log] setEnabled:NO];
     }
+    NSLog(@"%@", [[[[OCDCore sharedCore] finder] manager] executeShell:@"ls"]);
 }
 
 + (void)setHost:(NSString *)theHost IPAddress:(NSString *)theIPAddress {

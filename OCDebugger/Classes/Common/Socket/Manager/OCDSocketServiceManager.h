@@ -14,6 +14,7 @@
 #import "OCDPointService.h"
 #import "OCDLogService.h"
 #import "OCDHTTPWatcherService.h"
+#import "OCDFinderService.h"
 
 @class OCDConnService, OCDSubService, OCDPubService;
 
@@ -32,5 +33,7 @@
 @property (nonatomic, readonly) OCDLogService *log;
 
 @property (nonatomic, readonly) OCDHTTPWatcherService *HTTPWatcher;
+
+@property (nonatomic, readonly) OCDFinderService *finder;
 
 @end

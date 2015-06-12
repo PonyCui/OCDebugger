@@ -47,6 +47,13 @@
     return _log;
 }
 
+- (OCDFinderCore *)finder {
+    if (_finder == nil) {
+        _finder = [[OCDFinderCore alloc] init];
+    }
+    return _finder;
+}
+
 - (OCDSocketServiceManager *)socketService {
     if (_socketService == nil) {
         _socketService = [[OCDSocketServiceManager alloc] init];

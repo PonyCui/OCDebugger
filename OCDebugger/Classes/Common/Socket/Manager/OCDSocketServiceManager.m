@@ -21,6 +21,7 @@
         _point = [[OCDPointService alloc] init];
         _log = [[OCDLogService alloc] init];
         _HTTPWatcher = [[OCDHTTPWatcherService alloc] init];
+        _finder = [[OCDFinderService alloc] init];
     }
     return self;
 }
