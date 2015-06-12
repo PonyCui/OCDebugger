@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "OCDHTTPWatcherConnectionManager.h"
+#import "OCDHTTPWatcherHostsManager.h"
 
 @interface OCDHTTPWatcherCore : NSObject
 
 @property (nonatomic, strong) OCDHTTPWatcherConnectionManager *connectionManager;
+
+@property (nonatomic, strong) OCDHTTPWatcherHostsManager *hostsManager;
 
 - (void)install;
 

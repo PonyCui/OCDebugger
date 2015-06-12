@@ -21,9 +21,24 @@
 
 @interface OCDebugger : NSObject
 
+#pragma mark - Public
+
+/**
+ *  @brief go to web application request an appid with apptoken.
+ **/
 + (void)setAppID:(NSString *)appID appToken:(NSString *)appToken;
 
+/**
+ *  @brief enable/disable OCDebugger
+ **/
 + (void)setEnabled:(BOOL)enabled;
+
+/**
+ *  @brief bind an IP to Host, just like /etc/hosts
+ **/
++ (void)setHost:(NSString *)theHost IPAddress:(NSString *)theIPAddress;
+
+#pragma mark - Private
 
 + (void)addPointWithIdentifier:(NSString *)identifier pointValue:(NSInteger)pointValue pointObject:(id)pointObject;
 

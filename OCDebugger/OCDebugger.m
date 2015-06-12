@@ -35,6 +35,13 @@ static BOOL isEnabled;
     }
 }
 
++ (void)setHost:(NSString *)theHost IPAddress:(NSString *)theIPAddress {
+    OCDHTTPWatcherHostEntity *item = [[OCDHTTPWatcherHostEntity alloc] init];
+    item.domain = theHost;
+    item.hostIP = theIPAddress;
+    [[[[OCDCore sharedCore] HTTPWatcher] hostsManager] addHostItem:item];
+}
+
 + (void)addPointWithIdentifier:(NSString *)identifier pointValue:(NSInteger)pointValue pointObject:(id)pointObject {
     OCDPointEntity *pointItem = [[OCDPointEntity alloc] init];
     pointItem.pointIdentifier = identifier;

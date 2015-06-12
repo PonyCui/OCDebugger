@@ -38,6 +38,7 @@ static int watchOrderID = 0;
 }
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
+    request = [[[[OCDCore sharedCore] HTTPWatcher] hostsManager] hostedRequestWithRequest:request];
     NSMutableURLRequest *mutableReqeust = [request mutableCopy];
     [NSURLProtocol setProperty:[NSString stringWithFormat:@"%ld", (long)watchOrderID]
                         forKey:@"OCDHTTPWatcher"

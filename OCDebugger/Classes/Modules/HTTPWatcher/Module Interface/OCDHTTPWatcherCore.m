@@ -27,4 +27,11 @@
     return _connectionManager;
 }
 
+- (OCDHTTPWatcherHostsManager *)hostsManager {
+    if (_hostsManager == nil) {
+        _hostsManager = [[OCDHTTPWatcherHostsManager alloc] init];
+    }
+    return _hostsManager;
+}
+
 @end

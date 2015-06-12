@@ -65,6 +65,10 @@
 		6332096A1B29692100258278 /* OCDLogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209681B29655600258278 /* OCDLogService.m */; };
 		6332096E1B2A87C000258278 /* OCDHTTPWatcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332096D1B2A87C000258278 /* OCDHTTPWatcherService.m */; };
 		6332096F1B2A8B7200258278 /* OCDHTTPWatcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332096D1B2A87C000258278 /* OCDHTTPWatcherService.m */; };
+		633209721B2AB16000258278 /* OCDHTTPWatcherHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209711B2AB16000258278 /* OCDHTTPWatcherHostsManager.m */; };
+		633209751B2AB19300258278 /* OCDHTTPWatcherHostEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209741B2AB19300258278 /* OCDHTTPWatcherHostEntity.m */; };
+		633209761B2AB7F300258278 /* OCDHTTPWatcherHostEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209741B2AB19300258278 /* OCDHTTPWatcherHostEntity.m */; };
+		633209771B2AB7F300258278 /* OCDHTTPWatcherHostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209711B2AB16000258278 /* OCDHTTPWatcherHostsManager.m */; };
 		636CF0641B26E85A0078D48E /* OCDDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0631B26E85A0078D48E /* OCDDeviceService.m */; };
 		636CF0651B26E8630078D48E /* OCDDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0631B26E85A0078D48E /* OCDDeviceService.m */; };
 		63C203831B25833400D027CC /* OCDebugger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C203821B25833400D027CC /* OCDebugger.h */; };
@@ -183,6 +187,10 @@
 		6332096B1B29750300258278 /* OCDPrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCDPrefixHeader.h; sourceTree = "<group>"; };
 		6332096C1B2A87C000258278 /* OCDHTTPWatcherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherService.h; sourceTree = "<group>"; };
 		6332096D1B2A87C000258278 /* OCDHTTPWatcherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherService.m; sourceTree = "<group>"; };
+		633209701B2AB16000258278 /* OCDHTTPWatcherHostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherHostsManager.h; sourceTree = "<group>"; };
+		633209711B2AB16000258278 /* OCDHTTPWatcherHostsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherHostsManager.m; sourceTree = "<group>"; };
+		633209731B2AB19300258278 /* OCDHTTPWatcherHostEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherHostEntity.h; sourceTree = "<group>"; };
+		633209741B2AB19300258278 /* OCDHTTPWatcherHostEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherHostEntity.m; sourceTree = "<group>"; };
 		636CF0621B26E85A0078D48E /* OCDDeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDeviceService.h; sourceTree = "<group>"; };
 		636CF0631B26E85A0078D48E /* OCDDeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDeviceService.m; sourceTree = "<group>"; };
 		63C2037F1B25833400D027CC /* libOCDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -350,6 +358,8 @@
 			children = (
 				63152A4B1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.h */,
 				63152A4C1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m */,
+				633209701B2AB16000258278 /* OCDHTTPWatcherHostsManager.h */,
+				633209711B2AB16000258278 /* OCDHTTPWatcherHostsManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -359,6 +369,8 @@
 			children = (
 				63152A391B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.h */,
 				63152A3A1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m */,
+				633209731B2AB19300258278 /* OCDHTTPWatcherHostEntity.h */,
+				633209741B2AB19300258278 /* OCDHTTPWatcherHostEntity.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -954,6 +966,7 @@
 				633209631B29600500258278 /* OCDDashboardLogViewController.m in Sources */,
 				63CAE2B71B269B7300650397 /* OCDPubService.m in Sources */,
 				63152A361B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m in Sources */,
+				633209751B2AB19300258278 /* OCDHTTPWatcherHostEntity.m in Sources */,
 				63152A3B1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m in Sources */,
 				633209571B2957B000258278 /* OCDLogCore.m in Sources */,
 				63CAE2AD1B268A2500650397 /* OCDValueFormatter.m in Sources */,
@@ -963,6 +976,7 @@
 				633209691B29655600258278 /* OCDLogService.m in Sources */,
 				63152A661B2687B80072F9F4 /* OCDSubService.m in Sources */,
 				633209121B2820A600258278 /* OCDPointManager.m in Sources */,
+				633209721B2AB16000258278 /* OCDHTTPWatcherHostsManager.m in Sources */,
 				63CAE2AB1B268A2500650397 /* OCDOutputHelper.m in Sources */,
 				633209601B295E6900258278 /* OCDLogManager.m in Sources */,
 				63152A591B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m in Sources */,
@@ -984,6 +998,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633209761B2AB7F300258278 /* OCDHTTPWatcherHostEntity.m in Sources */,
+				633209771B2AB7F300258278 /* OCDHTTPWatcherHostsManager.m in Sources */,
 				6332096F1B2A8B7200258278 /* OCDHTTPWatcherService.m in Sources */,
 				6332096A1B29692100258278 /* OCDLogService.m in Sources */,
 				633209641B2960FB00258278 /* OCDLogManager.m in Sources */,
