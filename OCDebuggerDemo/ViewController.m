@@ -31,7 +31,7 @@
 }
 
 - (void)test {
-    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://huodong.duowan.com/videoSubscribe/?r=subscribe/checksubsnew&time_ago=0"]];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/AFNetworking/2.5.4/AFNetworking.podspec.json"]];
     [postRequest setHTTPMethod:@"POST"];
     NSData *postData = [@"key1=value1&key2=value2" dataUsingEncoding:NSUTF8StringEncoding];
     [postRequest setHTTPBody:postData];
