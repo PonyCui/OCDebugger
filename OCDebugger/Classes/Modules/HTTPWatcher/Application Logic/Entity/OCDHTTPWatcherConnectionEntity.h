@@ -20,6 +20,8 @@
 
 @property (nonatomic, copy) NSString *requestHeader;
 
+@property (nonatomic, copy) NSString *requestBody;
+
 @property (nonatomic, copy) NSString *responseURLString;
 
 @property (nonatomic, copy) NSString *responseStatusCode;

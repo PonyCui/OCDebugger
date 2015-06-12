@@ -13,6 +13,7 @@
 #import "OCDDeviceService.h"
 #import "OCDPointService.h"
 #import "OCDLogService.h"
+#import "OCDHTTPWatcherService.h"
 
 @class OCDConnService, OCDSubService, OCDPubService;
 
@@ -29,5 +30,7 @@
 @property (nonatomic, readonly) OCDPointService *point;
 
 @property (nonatomic, readonly) OCDLogService *log;
+
+@property (nonatomic, readonly) OCDHTTPWatcherService *HTTPWatcher;
 
 @end

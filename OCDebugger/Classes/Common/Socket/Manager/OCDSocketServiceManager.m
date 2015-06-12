@@ -20,6 +20,7 @@
         _device = [[OCDDeviceService alloc] init];
         _point = [[OCDPointService alloc] init];
         _log = [[OCDLogService alloc] init];
+        _HTTPWatcher = [[OCDHTTPWatcherService alloc] init];
     }
     return self;
 }

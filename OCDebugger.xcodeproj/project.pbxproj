@@ -63,6 +63,8 @@
 		633209661B2960FB00258278 /* OCDDashboardLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209621B29600500258278 /* OCDDashboardLogViewController.m */; };
 		633209691B29655600258278 /* OCDLogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209681B29655600258278 /* OCDLogService.m */; };
 		6332096A1B29692100258278 /* OCDLogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209681B29655600258278 /* OCDLogService.m */; };
+		6332096E1B2A87C000258278 /* OCDHTTPWatcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332096D1B2A87C000258278 /* OCDHTTPWatcherService.m */; };
+		6332096F1B2A8B7200258278 /* OCDHTTPWatcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332096D1B2A87C000258278 /* OCDHTTPWatcherService.m */; };
 		636CF0641B26E85A0078D48E /* OCDDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0631B26E85A0078D48E /* OCDDeviceService.m */; };
 		636CF0651B26E8630078D48E /* OCDDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0631B26E85A0078D48E /* OCDDeviceService.m */; };
 		63C203831B25833400D027CC /* OCDebugger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C203821B25833400D027CC /* OCDebugger.h */; };
@@ -179,6 +181,8 @@
 		633209671B29655600258278 /* OCDLogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDLogService.h; sourceTree = "<group>"; };
 		633209681B29655600258278 /* OCDLogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDLogService.m; sourceTree = "<group>"; };
 		6332096B1B29750300258278 /* OCDPrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCDPrefixHeader.h; sourceTree = "<group>"; };
+		6332096C1B2A87C000258278 /* OCDHTTPWatcherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherService.h; sourceTree = "<group>"; };
+		6332096D1B2A87C000258278 /* OCDHTTPWatcherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherService.m; sourceTree = "<group>"; };
 		636CF0621B26E85A0078D48E /* OCDDeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDeviceService.h; sourceTree = "<group>"; };
 		636CF0631B26E85A0078D48E /* OCDDeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDeviceService.m; sourceTree = "<group>"; };
 		63C2037F1B25833400D027CC /* libOCDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +392,8 @@
 				63CAE2B61B269B7300650397 /* OCDPubService.m */,
 				636CF0621B26E85A0078D48E /* OCDDeviceService.h */,
 				636CF0631B26E85A0078D48E /* OCDDeviceService.m */,
+				6332096C1B2A87C000258278 /* OCDHTTPWatcherService.h */,
+				6332096D1B2A87C000258278 /* OCDHTTPWatcherService.m */,
 				633209171B283CC900258278 /* OCDPointService.h */,
 				633209181B283CC900258278 /* OCDPointService.m */,
 				633209671B29655600258278 /* OCDLogService.h */,
@@ -963,6 +969,7 @@
 				633209461B29376F00258278 /* OCDDashboardPointItemInteractor.m in Sources */,
 				6332095D1B295D5100258278 /* OCDLogEntity.m in Sources */,
 				633209401B29375500258278 /* OCDDashboardPointPresenter.m in Sources */,
+				6332096E1B2A87C000258278 /* OCDHTTPWatcherService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6332096F1B2A8B7200258278 /* OCDHTTPWatcherService.m in Sources */,
 				6332096A1B29692100258278 /* OCDLogService.m in Sources */,
 				633209641B2960FB00258278 /* OCDLogManager.m in Sources */,
 				633209651B2960FB00258278 /* OCDLogEntity.m in Sources */,

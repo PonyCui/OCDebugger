@@ -20,6 +20,12 @@
         self.requestDate = [NSDate date];
         self.requestMethod = [request HTTPMethod];
         self.requestHeader = [[request allHTTPHeaderFields] description];
+        if ([request.HTTPBody length] > 1024 * 32) {
+            self.requestBody = @"Bigger than 32K, will discard transfer to server.";
+        }
+        else {
+            self.requestBody = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
+        }
     }
     return self;
 }
@@ -65,7 +71,8 @@
              @"responseHeader": TOString(self.responseHeader),
              @"responseString": TOString(self.responseString),
              @"responseDataSize": TOString(self.responseDataSize),
-             @"timeUse": TOString(self.timeUse)
+             @"timeUse": TOString(self.timeUse),
+             @"requestBody": TOString(self.requestBody)
              };
 }
 
