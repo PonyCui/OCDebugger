@@ -1,5 +1,5 @@
 # OCDebugger
-OCDebugger is an easy to use debugging toolset. You use OCDebugger debug your application on Web or iPhone. It's a client library and we provide an web application (OCDServer) holding all connection from iOS. Also, we provide a public web application here xxx, please feel free to use it, it's really stable.
+OCDebugger is an easy to use debugging toolset. You use OCDebugger debug your application on Web or iPhone. It's a client library and we provide an web application (OCDServer) holding all connection from iOS. Also, we provide a public web application here [Open link](http://ocdebugger.sinaapp.com/dashboard/index.html?access=1,testToken), please feel free to use it, it's really stable.
 
 Unlike **PonyDebugger**, OCDebugger don't requires open Chrome Developer Tools, you may debug your application using Safari, Chrome, Firefox, or even IE10+ .
 
@@ -9,7 +9,7 @@ OCDebugger is licensed under MIT.
 
 ### Remote and Local Dashboard
 
-To read debug data, you can shake your mobile phone any time, or use PC/Mac open web application (http://xxxx.com)
+To read debug data, you can shake your mobile phone any time, or use PC/Mac open web application [Open link](http://ocdebugger.sinaapp.com/dashboard/index.html?access=1,testToken)
 
 ![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/0.png)
 
@@ -61,11 +61,19 @@ We use local or remote control make Point valid or invalid.
 
 ### Finder
 OCDebugger can operate file using shell like interface. The following cmd is supported.
-```cd..``` ```cd directory``` ```cd /```
-```ls``` ```ls directory```
-```rm file``` ```rm directory``` ```rm *```
-```vi file``` use ```:w``` save changes ```:q``` quit vi mode
-```clear```
+
+```
+cd..    cd directory     cd /
+
+ls      ls directory
+
+rm file     rm directory     rm *
+
+vi file     use :w save changes     use :q quit vi mode
+
+clear
+```
+
 ![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/8.png)
 
 ### More
@@ -116,7 +124,7 @@ Copy ```OCDPrefixHeader.h``` to your project manually, it should not depend of P
 
 import ```OCDebugger.h``` and ```OCDPrefixHeader.h``` to your project prefix header file.
 
-Go to web application http://xxxx.com , request an appid.
+Go to web application [Open link](http://ocdebugger.sinaapp.com/dashboard/index.html?access=1,testToken) , request an appid.
 
 Type following code in any where you want.(Recommend applicaton:didFinishLaunchingWithOptions:)
 ```
