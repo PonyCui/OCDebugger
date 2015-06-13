@@ -26,6 +26,8 @@ And, all trading network library can be sniffer by OCDebugger including ```AFNet
 
 OCDebugger will handle less 32K response data, and send to server, web application will try to convert JSON into pretty style. The request header and response header are also handled.
 
+You can change the Request Header or Request Body, click Resend button, make a different request again.
+
 ### Remote and Local Logging
 OCDebugger makes logging much easier than you thing. You ```#import "OCDebugger.h"``` into prefix header file. That's enough. All NSLog() message will send to server and save in local.
 And we eager to do more, we want to debug like ```lldb```, and we will finish it next version.
@@ -56,6 +58,15 @@ The difference of ```OCDValuePoint``` and ```OCDObjectPoint``` is, ```OCDValuePo
 We use local or remote control make Point valid or invalid.
 ![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/6.png)
 ![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/7.png)
+
+### Finder
+OCDebugger can operate file using shell like interface. The following cmd is supported.
+```cd..``` ```cd directory``` ```cd /```
+```ls``` ```ls directory```
+```rm file``` ```rm directory``` ```rm *```
+```vi file``` use ```:w``` save changes ```:q``` quit vi mode
+```clear```
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/8.png)
 
 ### More
 We eager to develop more function to every developer. Please star OCDebugger, keep eyes with me. Thanks.
