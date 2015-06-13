@@ -1,4 +1,7 @@
 # OCDebugger
+
+[Chinese 中文](https://github.com/PonyCui/OCDebugger/wiki/%E4%B8%AD%E6%96%87%E6%8C%87%E5%BC%95)
+
 OCDebugger is an easy to use debugging toolset. You use OCDebugger debug your application on Web or iPhone. It's a client library and we provide an web application (OCDServer) holding all connection from iOS. Also, we provide a public web application here [Open link](http://ocdebugger.sinaapp.com/dashboard/index.html?access=1,testToken), please feel free to use it, it's really stable.
 
 Unlike **PonyDebugger**, OCDebugger don't requires open Chrome Developer Tools, you may debug your application using Safari, Chrome, Firefox, or even IE10+ .
