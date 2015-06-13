@@ -29,7 +29,8 @@
 }
 
 - (NSString *)socketAddressRequestURLString {
-    return @"http://localhost/OCDServer/index.php/pubsub/index";
+//    return @"http://localhost/OCDServer/index.php/pubsub/index";
+    return @"http://ocdebugger.sinaapp.com/index.php/pubsub/index";
 }
 
 @end
