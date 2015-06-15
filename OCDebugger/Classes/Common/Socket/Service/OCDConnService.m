@@ -11,6 +11,7 @@
 #import "OCDSubService.h"
 #import "OCDCore.h"
 #import "OCDDefine.h"
+#import "OCDValueFormatter.h"
 #import <SocketRocket/SRWebSocket.h>
 
 @interface OCDConnService ()<SRWebSocketDelegate>
@@ -79,7 +80,8 @@
 
 - (void)sendMessage:(id)message {
     if ([message isKindOfClass:[NSString class]] &&
-        [message lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 1024 * 16) {
+        [message lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 1024 * 8) {
+        //Bigger than 4KB data use HTTP alone channel.
         NSString *storageIdentifier = [[OCDDefine sharedDefine] uniqueIdentifier];
         NSMutableURLRequest *storageRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[OCDDefine sharedDefine] storageAddAddressWithIdentifier:storageIdentifier]]];
         [storageRequest setHTTPMethod:@"POST"];
