@@ -17,7 +17,7 @@ OCDebugger is an easy to use debugging toolset. You use OCDebugger debug your ap
 
   s.platform     = :ios, "6.0"
 
-  s.source       = { :git => "https://github.com/PonyCui/OCDebugger" }#, :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/PonyCui/OCDebugger.git" , :tag => "0.0.1" }
 
   s.source_files  = "OCDebugger", "OCDebugger/Classes", "OCDebugger/Classes/**", "OCDebugger/Classes/**/**", "OCDebugger/Classes/**/**/**", "OCDebugger/Classes/**/**/**/**", "OCDebugger/Classes/**/**/**/**/**"
 

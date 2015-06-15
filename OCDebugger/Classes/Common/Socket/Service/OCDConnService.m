@@ -78,7 +78,27 @@
 }
 
 - (void)sendMessage:(id)message {
-    [self.webSocketConnection send:message];
+    if ([message isKindOfClass:[NSString class]] &&
+        [message lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 1024 * 16) {
+        NSString *storageIdentifier = [[OCDDefine sharedDefine] uniqueIdentifier];
+        NSMutableURLRequest *storageRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[OCDDefine sharedDefine] storageAddAddressWithIdentifier:storageIdentifier]]];
+        [storageRequest setHTTPMethod:@"POST"];
+        [storageRequest setHTTPBody:[message dataUsingEncoding:NSUTF8StringEncoding]];
+        [storageRequest setValue: @"application/raw" forHTTPHeaderField:@"Content-Type"];
+        [NSURLProtocol setProperty:@"1" forKey:kOCDMessageStorageRequestKey inRequest:storageRequest];
+        [NSURLConnection sendAsynchronousRequest:storageRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            if (connectionError == nil) {
+                NSDictionary *storageDictionary = @{
+                                                    @"_storageIdentifier": storageIdentifier
+                                                    };
+                NSString *storageMessage = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:storageDictionary options:kNilOptions error:NULL] encoding:NSUTF8StringEncoding];
+                [self.webSocketConnection send:storageMessage];
+            }
+        }];
+    }
+    else {
+        [self.webSocketConnection send:message];
+    }
 }
 
 - (void)disconnect {
