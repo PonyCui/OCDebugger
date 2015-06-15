@@ -30,7 +30,7 @@
 }
 
 - (NSString *)socketAddressRequestURLString {
-    return @"http://localhost/OCDServer/index.php/pubsub/index";
+//    return @"http://localhost/OCDServer/index.php/pubsub/index";
     return @"http://ocdebugger.sinaapp.com/index.php/pubsub/index";
 }
 
@@ -43,11 +43,13 @@
 }
 
 - (NSString *)storageAddAddressWithIdentifier:(NSString *)identifier {
-    return [NSString stringWithFormat:@"http://localhost/OCDServer/index.php/storage/add?identifier=%@", identifier];
+//    return [NSString stringWithFormat:@"http://localhost/OCDServer/index.php/storage/add?identifier=%@", identifier];
+    return [NSString stringWithFormat:@"http://ocdebugger.sinaapp.com/index.php/storage/add?identifier=%@", identifier];
 }
 
 - (NSString *)storageFetchAddressWithIdentifier:(NSString *)identifier {
-    return [NSString stringWithFormat:@"http://localhost/OCDServer/index.php/storage/fetch?identifier=%@", identifier];
+//    return [NSString stringWithFormat:@"http://localhost/OCDServer/index.php/storage/fetch?identifier=%@", identifier];
+    return [NSString stringWithFormat:@"http://ocdebugger.sinaapp.com/index.php/storage/fetch?identifier=%@", identifier];
 }
 
 @end
