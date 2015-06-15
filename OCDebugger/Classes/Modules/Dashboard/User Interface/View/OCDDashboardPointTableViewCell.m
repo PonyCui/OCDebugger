@@ -53,6 +53,7 @@
         _switcher.center = CGPointMake(self.frame.size.width - _switcher.frame.size.width / 2.0 - 8.0,
                                        self.frame.size.height / 2.0);
         [_switcher addTarget:self action:@selector(handleSwitcherValueChanged) forControlEvents:UIControlEventValueChanged];
+        _switcher.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     }
     return _switcher;
 }
