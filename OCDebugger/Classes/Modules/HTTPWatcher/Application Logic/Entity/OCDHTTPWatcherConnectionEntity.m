@@ -39,15 +39,19 @@
             NSHTTPURLResponse *theResponse = (id)response;
             self.responseStatusCode = [NSString stringWithFormat:@"%ld", (long)theResponse.statusCode];
             self.responseHeader = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:TODictionary([theResponse allHeaderFields]) options:kNilOptions error:NULL] encoding:NSUTF8StringEncoding];
-            if ([data length] > 1024 * 64) {
-                //Bigger than 64K, will discard transfer to server.
-                self.responseString = @"Bigger than 64K, will discard transfer to server.";
+            
+            NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            if (dataString != nil && [dataString isKindOfClass:[NSString class]]) {
+                NSString *base64String = [[NSString alloc] initWithData:[data base64EncodedDataWithOptions:kNilOptions] encoding:NSUTF8StringEncoding];
+                if ([base64String lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 1024 * 64) {
+                    self.responseString = @"(Bigger than 64K, will discard transfer to server.)";
+                }
+                else {
+                    self.responseString = base64String;
+                }
             }
             else {
-                NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                if (dataString != nil && [dataString isKindOfClass:[NSString class]]) {
-                    self.responseString = dataString;
-                }
+                self.responseString = @"(Binary response)";
             }
             self.responseDataSize = [NSString stringWithFormat:@"%.2fKB", [data length] / 1024.0];
         }
