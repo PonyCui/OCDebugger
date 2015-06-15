@@ -9,6 +9,7 @@
 #import "OCDHTTPWatcherURLProtocol.h"
 #import "OCDHTTPWatcherConnectionEntity.h"
 #import "OCDCore.h"
+#import "OCDDefine.h"
 
 static int watchOrderID = 0;
 
@@ -27,11 +28,18 @@ static int watchOrderID = 0;
 @implementation OCDHTTPWatcherURLProtocol
 
 + (void)load {
-    watchOrderID = arc4random() % 100000;
+    watchOrderID = arc4random() % 1000000;
 }
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
+    if (![request.URL.scheme isEqualToString:@"http"] &&
+        ![request.URL.scheme isEqualToString:@"https"]) {
+        return NO;
+    }
     if ([NSURLProtocol propertyForKey:@"OCDHTTPWatcher" inRequest:request] != nil) {
+        return NO;
+    }
+    if ([NSURLProtocol propertyForKey:kOCDMessageStorageRequestKey inRequest:request] != nil) {
         return NO;
     }
     return YES;

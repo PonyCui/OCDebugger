@@ -145,8 +145,8 @@
     if ([shell hasPrefix:@"vi "]) {
         if ([[NSFileManager defaultManager] fileExistsAtPath:[self absolutelyPathWithPath:[shell substringFromIndex:3]]]) {
             NSString *fileContent = [NSString stringWithContentsOfFile:[self absolutelyPathWithPath:[shell substringFromIndex:3]] encoding:NSUTF8StringEncoding error:NULL];
-            if (fileContent == nil || [fileContent length] > 1024 * 16 || ![fileContent isKindOfClass:[NSString class]]) {
-                return @"Not a text file or file size large than 16KB.";
+            if (fileContent == nil || [fileContent length] > 1024 * 8 || ![fileContent isKindOfClass:[NSString class]]) {
+                return @"Not a text file or file size large than 8KB.";
             }
             [[[[OCDCore sharedCore] socketService] pub]
              pubMessageToService:@"finder"

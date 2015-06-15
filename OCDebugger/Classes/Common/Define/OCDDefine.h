@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "OCDHTTPWatcherDefine.h"
 
+#define kOCDMessageStorageRequestKey @"OCDMessageStorageRequestKey"
+
 @interface OCDDefine : NSObject
 
 + (OCDDefine *)sharedDefine;
@@ -20,5 +22,11 @@
 @property (nonatomic, copy) NSString *appID;
 
 @property (nonatomic, copy) NSString *appToken;
+
+- (NSString *)uniqueIdentifier;
+
+- (NSString *)storageAddAddressWithIdentifier:(NSString *)identifier;
+
+- (NSString *)storageFetchAddressWithIdentifier:(NSString *)identifier;
 
 @end
