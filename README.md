@@ -146,6 +146,8 @@ OCDebugger is not a production environment library.
 
 There are still lots of issue we should resolve, here is a listing.
 
-~~1. WebSocket can't transfer large size content, and SAE limit it's 16K, so I'm trying to solve this problem.~~ Now support 64K and larger.
-2. Finder request and response too slow, because PHP limit sleep() 1s per time, so I'm trying to fix it.
-3. JSON String value contains \n \r will face transfer issue under SAE.
+~~1.WebSocket can't transfer large size content, and SAE limit it's 16K, so I'm trying to solve this problem.~~ Now support 64K and larger.
+
+2.Finder request and response too slow, because PHP limit sleep() 1s per time, so I'm trying to fix it.
+
+3.JSON String value contains \n \r will face transfer issue under SAE.
