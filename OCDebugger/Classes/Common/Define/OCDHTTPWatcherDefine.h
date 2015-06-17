@@ -12,4 +12,6 @@
 
 @property (nonatomic, assign) BOOL enabled;
 
+@property (nonatomic, readonly) NSString *modifierRequestURLString;
+
 @end

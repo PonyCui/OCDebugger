@@ -34,4 +34,11 @@
     return _hostsManager;
 }
 
+- (OCDHTTPWatcherModifierManager *)modifierManager {
+    if (_modifierManager == nil) {
+        _modifierManager = [[OCDHTTPWatcherModifierManager alloc] init];
+    }
+    return _modifierManager;
+}
+
 @end

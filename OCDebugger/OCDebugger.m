@@ -9,6 +9,7 @@
 #import "OCDebugger.h"
 #import "OCDCore.h"
 #import "OCDDefine.h"
+#import "OCDHTTPWatcherMappingEntity.h"
 
 static BOOL isEnabled;
 
@@ -26,6 +27,7 @@ static BOOL isEnabled;
         [[[[OCDCore sharedCore] socketService] conn] connect];
         [[[OCDCore sharedCore] dashboard] install];
         [[[OCDCore sharedCore] log] setEnabled:YES];
+        [[[[OCDCore sharedCore] HTTPWatcher] modifierManager] fetchModifiers];
     }
     else {
         [[[OCDDefine sharedDefine] HTTPWatcher] setEnabled:NO];

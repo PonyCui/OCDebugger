@@ -8,12 +8,19 @@
 
 #import "OCDHTTPWatcherDefine.h"
 #import "OCDCore.h"
+#import "OCDDefine.h"
 
 @implementation OCDHTTPWatcherDefine
 
 - (void)setEnabled:(BOOL)enabled {
     _enabled = enabled;
     _enabled ? [[[OCDCore sharedCore] HTTPWatcher] install] : [[[OCDCore sharedCore] HTTPWatcher] uninstall];
+}
+
+- (NSString *)modifierRequestURLString {
+    return [NSString stringWithFormat:@"http://localhost/OCDServer/index.php/modifier/fetch?appid=%@&apptoken=%@",
+            [[OCDDefine sharedDefine] appID],
+            [[OCDDefine sharedDefine] appToken]];
 }
 
 @end

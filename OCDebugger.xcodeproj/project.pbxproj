@@ -25,6 +25,10 @@
 		63152A5A1B25AD9C0072F9F4 /* OCDHTTPWatcherURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A581B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m */; };
 		63152A651B2687B80072F9F4 /* OCDConnService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A611B2687B80072F9F4 /* OCDConnService.m */; };
 		63152A661B2687B80072F9F4 /* OCDSubService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A631B2687B80072F9F4 /* OCDSubService.m */; };
+		6317AFC01B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6317AFBF1B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m */; };
+		6317AFC11B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6317AFBF1B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m */; };
+		6317AFC41B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6317AFC31B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m */; };
+		6317AFC51B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6317AFC31B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m */; };
 		6332090A1B281FFA00258278 /* OCDPointCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209091B281FFA00258278 /* OCDPointCore.m */; };
 		6332090F1B28209800258278 /* OCDPointEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6332090E1B28209800258278 /* OCDPointEntity.m */; };
 		633209121B2820A600258278 /* OCDPointManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 633209111B2820A600258278 /* OCDPointManager.m */; };
@@ -138,7 +142,6 @@
 		63152A291B2599B60072F9F4 /* OCDCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDCore.m; sourceTree = "<group>"; };
 		63152A2B1B2599BC0072F9F4 /* OCDDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDefine.h; sourceTree = "<group>"; };
 		63152A2C1B2599BC0072F9F4 /* OCDDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDefine.m; sourceTree = "<group>"; };
-		63152A311B259C2F0072F9F4 /* OCDHTTPWatcherCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherCore.h; sourceTree = "<group>"; };
 		63152A321B259C2F0072F9F4 /* OCDHTTPWatcherCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherCore.m; sourceTree = "<group>"; };
 		63152A341B259EAD0072F9F4 /* OCDHTTPWatcherDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherDefine.h; sourceTree = "<group>"; };
 		63152A351B259EAD0072F9F4 /* OCDHTTPWatcherDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherDefine.m; sourceTree = "<group>"; };
@@ -152,6 +155,10 @@
 		63152A611B2687B80072F9F4 /* OCDConnService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDConnService.m; sourceTree = "<group>"; };
 		63152A621B2687B80072F9F4 /* OCDSubService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSubService.h; sourceTree = "<group>"; };
 		63152A631B2687B80072F9F4 /* OCDSubService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSubService.m; sourceTree = "<group>"; };
+		6317AFBE1B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherMappingEntity.h; sourceTree = "<group>"; };
+		6317AFBF1B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherMappingEntity.m; sourceTree = "<group>"; };
+		6317AFC21B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherModifierManager.h; sourceTree = "<group>"; };
+		6317AFC31B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherModifierManager.m; sourceTree = "<group>"; };
 		633209081B281FFA00258278 /* OCDPointCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDPointCore.h; sourceTree = "<group>"; };
 		633209091B281FFA00258278 /* OCDPointCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDPointCore.m; sourceTree = "<group>"; };
 		6332090D1B28209800258278 /* OCDPointEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDPointEntity.h; sourceTree = "<group>"; };
@@ -205,6 +212,7 @@
 		6332098A1B2AC72800258278 /* OCDFinderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDFinderService.m; sourceTree = "<group>"; };
 		636CF0621B26E85A0078D48E /* OCDDeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDDeviceService.h; sourceTree = "<group>"; };
 		636CF0631B26E85A0078D48E /* OCDDeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDDeviceService.m; sourceTree = "<group>"; };
+		639E12DA1B317801008902F9 /* OCDHTTPWatcherCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherCore.h; sourceTree = "<group>"; };
 		63C2037F1B25833400D027CC /* libOCDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C203821B25833400D027CC /* OCDebugger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCDebugger.h; sourceTree = "<group>"; };
 		63C203841B25833400D027CC /* OCDebugger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDebugger.m; sourceTree = "<group>"; };
@@ -360,7 +368,7 @@
 		63152A301B259BED0072F9F4 /* Module Interface */ = {
 			isa = PBXGroup;
 			children = (
-				63152A311B259C2F0072F9F4 /* OCDHTTPWatcherCore.h */,
+				639E12DA1B317801008902F9 /* OCDHTTPWatcherCore.h */,
 				63152A321B259C2F0072F9F4 /* OCDHTTPWatcherCore.m */,
 			);
 			path = "Module Interface";
@@ -373,6 +381,8 @@
 				63152A4C1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m */,
 				633209701B2AB16000258278 /* OCDHTTPWatcherHostsManager.h */,
 				633209711B2AB16000258278 /* OCDHTTPWatcherHostsManager.m */,
+				6317AFC21B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.h */,
+				6317AFC31B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -384,6 +394,8 @@
 				63152A3A1B259FDA0072F9F4 /* OCDHTTPWatcherConnectionEntity.m */,
 				633209731B2AB19300258278 /* OCDHTTPWatcherHostEntity.h */,
 				633209741B2AB19300258278 /* OCDHTTPWatcherHostEntity.m */,
+				6317AFBE1B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.h */,
+				6317AFBF1B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -998,6 +1010,7 @@
 			files = (
 				6332090F1B28209800258278 /* OCDPointEntity.m in Sources */,
 				633209491B293AE500258278 /* OCDDashboardPointTableViewCell.m in Sources */,
+				6317AFC41B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m in Sources */,
 				6332090A1B281FFA00258278 /* OCDPointCore.m in Sources */,
 				6332093C1B29349800258278 /* OCDDashboardPointViewController.m in Sources */,
 				63152A331B259C2F0072F9F4 /* OCDHTTPWatcherCore.m in Sources */,
@@ -1035,6 +1048,7 @@
 				63152A591B25AC130072F9F4 /* OCDHTTPWatcherURLProtocol.m in Sources */,
 				633209461B29376F00258278 /* OCDDashboardPointItemInteractor.m in Sources */,
 				6332095D1B295D5100258278 /* OCDLogEntity.m in Sources */,
+				6317AFC01B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m in Sources */,
 				633209401B29375500258278 /* OCDDashboardPointPresenter.m in Sources */,
 				6332096E1B2A87C000258278 /* OCDHTTPWatcherService.m in Sources */,
 			);
@@ -1051,6 +1065,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6317AFC51B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m in Sources */,
 				6332098C1B2AD7C200258278 /* OCDFinderService.m in Sources */,
 				633209871B2ABFA700258278 /* OCDFinderManager.m in Sources */,
 				633209881B2ABFA700258278 /* OCDFinderCore.m in Sources */,
@@ -1072,6 +1087,7 @@
 				633209351B292DD800258278 /* OCDDashboardShakeHooker.m in Sources */,
 				633209301B292D4400258278 /* OCDDashboardHookManager.m in Sources */,
 				633209311B292D4400258278 /* OCDDashboardCore.m in Sources */,
+				6317AFC11B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m in Sources */,
 				6332091A1B284BE600258278 /* OCDPointService.m in Sources */,
 				633209141B28279F00258278 /* OCDPointEntity.m in Sources */,
 				633209151B28279F00258278 /* OCDPointManager.m in Sources */,
