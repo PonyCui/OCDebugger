@@ -104,6 +104,7 @@ didReceiveResponse:(NSURLResponse *)response
 - (void)connection:(NSURLConnection *)connection
     didReceiveData:(NSData *)data
 {
+    data = [[[[OCDCore sharedCore] HTTPWatcher] modifierManager] modifiedDataForResponse:self.response withData:data];
     [[self client] URLProtocol:self didLoadData:data];
     [self.data appendData:data];
 }
@@ -115,6 +116,7 @@ didReceiveResponse:(NSURLResponse *)response
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    self.data = [[[[[OCDCore sharedCore] HTTPWatcher] modifierManager] modifiedDataForResponse:self.response withData:self.data] mutableCopy];
     [[self client] URLProtocolDidFinishLoading:self];
     OCDHTTPWatcherConnectionEntity *connectionItem = [[OCDHTTPWatcherConnectionEntity alloc]
                                                       initWithResponse:self.response

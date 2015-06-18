@@ -14,4 +14,6 @@
 
 - (NSURLRequest *)modifiedRequest:(NSURLRequest *)request;
 
+- (NSData *)modifiedDataForResponse:(NSURLResponse *)response withData:(NSData *)data;
+
 @end

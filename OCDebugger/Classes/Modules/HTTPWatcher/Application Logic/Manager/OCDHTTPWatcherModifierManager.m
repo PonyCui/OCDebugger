@@ -8,12 +8,15 @@
 
 #import "OCDHTTPWatcherModifierManager.h"
 #import "OCDHTTPWatcherMappingEntity.h"
+#import "OCDHTTPWatcherRewriteEntity.h"
 #import "OCDDefine.h"
 #import "OCDValueFormatter.h"
 
 @interface OCDHTTPWatcherModifierManager ()
 
 @property (nonatomic, copy) NSArray *mappingItems;
+
+@property (nonatomic, copy) NSArray *rewriteItems;
 
 @end
 
@@ -34,19 +37,27 @@
         if (connectionError == nil) {
             
             NSMutableArray *mappingItems = [NSMutableArray array];
+            NSMutableArray *rewriteItems = [NSMutableArray array];
             
             NSArray *modifiers = TOArray([NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:NULL]);
             [modifiers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 NSDictionary *itemDictionary = TODictionary(obj);
+                if (![TOString(itemDictionary[@"is_valid"]) isEqualToString:@"1"]) {
+                    return ;
+                }
                 if (itemDictionary[@"modifier_params"] != nil) {
                     NSData *paramsData = [TOString(itemDictionary[@"modifier_params"]) dataUsingEncoding:NSUTF8StringEncoding];
                     NSDictionary *paramsDictionary = TODictionary([NSJSONSerialization JSONObjectWithData:paramsData options:kNilOptions error:NULL]);
                     if ([TOString(paramsDictionary[@"type"]) isEqualToString:@"mapping"]) {
                         [mappingItems addObject:[[OCDHTTPWatcherMappingEntity alloc] initWithDictionary:paramsDictionary]];
                     }
+                    else if ([TOString(paramsDictionary[@"type"]) isEqualToString:@"rewrite"]) {
+                        [rewriteItems addObject:[[OCDHTTPWatcherRewriteEntity alloc] initWithDictionary:paramsDictionary]];
+                    }
                 }
             }];
             self.mappingItems = mappingItems;
+            self.rewriteItems = rewriteItems;
         }
     }];
 }
@@ -55,10 +66,20 @@
     __block NSURLRequest *modifiedRequest = request;
     [self.mappingItems enumerateObjectsUsingBlock:^(OCDHTTPWatcherMappingEntity *obj, NSUInteger idx, BOOL *stop) {
         if ([obj isValidRequest:request]) {
-            modifiedRequest = [obj modifiedRequest:request];
+            modifiedRequest = [obj modifiedRequest:modifiedRequest];
         }
     }];
     return modifiedRequest;
+}
+
+- (NSData *)modifiedDataForResponse:(NSURLResponse *)response withData:(NSData *)data {
+    __block NSData *modifiedData = data;
+    [self.rewriteItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isValidResponse:response]) {
+            modifiedData = [obj modifiedData:modifiedData];
+        }
+    }];
+    return modifiedData;
 }
 
 @end

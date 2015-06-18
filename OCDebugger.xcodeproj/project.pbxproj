@@ -103,6 +103,8 @@
 		63CAE2B31B268DC900650397 /* OCDSubService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63152A631B2687B80072F9F4 /* OCDSubService.m */; };
 		63CAE2B71B269B7300650397 /* OCDPubService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CAE2B61B269B7300650397 /* OCDPubService.m */; };
 		63CAE2B81B269F1B00650397 /* OCDPubService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CAE2B61B269B7300650397 /* OCDPubService.m */; };
+		63F41CA61B32B01B003FC9EB /* OCDHTTPWatcherRewriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F41CA51B32B01B003FC9EB /* OCDHTTPWatcherRewriteEntity.m */; };
+		63F41CA71B32B544003FC9EB /* OCDHTTPWatcherRewriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F41CA51B32B01B003FC9EB /* OCDHTTPWatcherRewriteEntity.m */; };
 		6DF2A29D20125BEA0882BA30 /* libPods-OCDebuggerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6679A4FFFF3441CA213F47B0 /* libPods-OCDebuggerDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -241,6 +243,8 @@
 		63CAE2AA1B268A2500650397 /* OCDValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDValueFormatter.m; sourceTree = "<group>"; };
 		63CAE2B51B269B7300650397 /* OCDPubService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDPubService.h; sourceTree = "<group>"; };
 		63CAE2B61B269B7300650397 /* OCDPubService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDPubService.m; sourceTree = "<group>"; };
+		63F41CA41B32B01B003FC9EB /* OCDHTTPWatcherRewriteEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDHTTPWatcherRewriteEntity.h; sourceTree = "<group>"; };
+		63F41CA51B32B01B003FC9EB /* OCDHTTPWatcherRewriteEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDHTTPWatcherRewriteEntity.m; sourceTree = "<group>"; };
 		6679A4FFFF3441CA213F47B0 /* libPods-OCDebuggerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCDebuggerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		686E9B9A245E5E7ECB3552F1 /* Pods-OCDebugger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCDebugger.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCDebugger/Pods-OCDebugger.release.xcconfig"; sourceTree = "<group>"; };
 		8AD46E2A98BDA90DA4A9B2A1 /* Pods-OCDebugger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCDebugger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCDebugger/Pods-OCDebugger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -396,6 +400,8 @@
 				633209741B2AB19300258278 /* OCDHTTPWatcherHostEntity.m */,
 				6317AFBE1B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.h */,
 				6317AFBF1B2FBAED00B2D898 /* OCDHTTPWatcherMappingEntity.m */,
+				63F41CA41B32B01B003FC9EB /* OCDHTTPWatcherRewriteEntity.h */,
+				63F41CA51B32B01B003FC9EB /* OCDHTTPWatcherRewriteEntity.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1019,6 +1025,7 @@
 				633209221B29297700258278 /* OCDDashboardCore.m in Sources */,
 				63152A4D1B25A6A30072F9F4 /* OCDHTTPWatcherConnectionManager.m in Sources */,
 				63152A651B2687B80072F9F4 /* OCDConnService.m in Sources */,
+				63F41CA61B32B01B003FC9EB /* OCDHTTPWatcherRewriteEntity.m in Sources */,
 				63CAE2A31B268A1F00650397 /* OCDSocketServiceManager.m in Sources */,
 				633209431B29376200258278 /* OCDDashboardPointInteractor.m in Sources */,
 				636CF0641B26E85A0078D48E /* OCDDeviceService.m in Sources */,
@@ -1065,6 +1072,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F41CA71B32B544003FC9EB /* OCDHTTPWatcherRewriteEntity.m in Sources */,
 				6317AFC51B2FC33A00B2D898 /* OCDHTTPWatcherModifierManager.m in Sources */,
 				6332098C1B2AD7C200258278 /* OCDFinderService.m in Sources */,
 				633209871B2ABFA700258278 /* OCDFinderManager.m in Sources */,

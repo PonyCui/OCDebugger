@@ -8,6 +8,7 @@
 
 #import "OCDHTTPWatcherService.h"
 #import "OCDValueFormatter.h"
+#import "OCDCore.h"
 #import <UIKit/UIKit.h>
 
 @implementation OCDHTTPWatcherService
@@ -22,6 +23,10 @@
         [resendRequest setValue:@"1" forHTTPHeaderField:@"_OCD.ResendConnection"];
         [NSURLConnection sendAsynchronousRequest:resendRequest queue:[NSOperationQueue mainQueue] completionHandler:nil];
     }
+}
+
+- (void)updateModifiers {
+    [[[[OCDCore sharedCore] HTTPWatcher] modifierManager] fetchModifiers];
 }
 
 @end
