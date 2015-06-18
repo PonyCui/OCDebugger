@@ -31,6 +31,34 @@ OCDebugger will handle less 32K response data, and send to server, web applicati
 
 You can change the Request Header or Request Body, click Resend button, make a different request again.
 
+### Host binding
+
+You use following code binding a host to specific IP, it's really useful.
+
+```
+[OCDebugger setHost:@"www.github.com" IPAddress:@"127.0.0.1"];
+```
+
+### HTTP Request Mapping
+
+Mapping modifier is now available. You use Mapping modify specific Request URL, the specific scheme/host/port/path/query all support pattern search.
+
+For example, if I wonder a request ```https://www.google.com/``` modify to ```https://www.github.com/```, what I need to do is add a Mapping rule as below.
+
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/9.png)
+
+_**All fix is realtime effects.**_
+
+### HTTP Response Rewrite
+
+Rewrite modifier is also available. You use Rewrite modify response text for specific ResponseURL. The specific scheme/host/port/path/query all support pattern search.
+
+If I wonder the response of host ```www.github.com``` "GitHub" word replace as "Hacked", what I need to do is add a Rewrite rule as below.
+
+![](https://raw.githubusercontent.com/PonyCui/OCDebugger/master/README_Resources/10.png)
+
+_**All fix is realtime effects.**_
+
 ### Remote and Local Logging
 OCDebugger makes logging much easier than you thing. You ```#import "OCDebugger.h"``` into prefix header file. That's enough. All NSLog() message will send to server and save in local.
 And we eager to do more, we want to debug like ```lldb```, and we will finish it next version.
