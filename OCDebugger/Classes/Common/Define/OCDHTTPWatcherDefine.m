@@ -18,7 +18,10 @@
 }
 
 - (NSString *)modifierRequestURLString {
-    return [NSString stringWithFormat:@"http://localhost/OCDServer/index.php/modifier/fetch?appid=%@&apptoken=%@",
+//    return [NSString stringWithFormat:@"http://localhost/OCDServer/index.php/modifier/fetch?appid=%@&apptoken=%@",
+//            [[OCDDefine sharedDefine] appID],
+//            [[OCDDefine sharedDefine] appToken]];
+    return [NSString stringWithFormat:@"http://ocdebugger.sinaapp.com/index.php/modifier/fetch?appid=%@&apptoken=%@",
             [[OCDDefine sharedDefine] appID],
             [[OCDDefine sharedDefine] appToken]];
 }
