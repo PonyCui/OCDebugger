@@ -1,5 +1,7 @@
 ## OCDebugger Introduce
 
+[Chinese edition](https://github.com/PonyCui/OCDebugger/wiki/%E6%9C%80%E9%80%82%E5%90%88iOS%E5%BC%80%E5%8F%91%E8%80%85%E4%BD%BF%E7%94%A8%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7-OCDebugger)
+
 In the iOS development process, an easy to use, efficient debugging tools for developers, can play a multiplier effect. I've used a lot of network packet capture tools including Fiddler, Paros, Charles, PonyDebugger, these tools have their own advantages, but there are some drawbacks.
 
 Fiddler is developed using C #, does not work on mac installation of iOS developers, tasteless chant;
